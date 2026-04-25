@@ -6,6 +6,8 @@ This module provides functions to detect outliers using various PyOD algorithms
 import numpy as np
 from scipy.io import loadmat
 from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
+import os
 import time
 
 # PyOD imports - common algorithms
@@ -35,26 +37,45 @@ except ImportError:
 
 def load_and_preprocess_dataset(dataset_path, dataset_name):
     """
-    Load and preprocess a dataset from .mat file
+    Load and preprocess a dataset from .mat or .csv file
     
     Parameters:
     -----------
     dataset_path : str
-        Path to the .mat file
+        Path to the file (.mat or .csv)
     dataset_name : str
         Name of the dataset
     
     Returns:
     --------
     data : numpy array
-        Preprocessed data (normalized)
+        Preprocessed data (normalized to [0,1])
     """
-    # Load dataset
-    load_data = loadmat(dataset_path)
+    # Detect file type
+    file_ext = os.path.splitext(dataset_path)[1].lower()
     
-    # Get the data (variable name is usually the dataset name)
-    data_key = [k for k in load_data.keys() if not k.startswith('__')][0]
-    trandata = load_data[data_key]
+    if file_ext == '.mat':
+        # Load .mat file
+        load_data = loadmat(dataset_path)
+        data_key = [k for k in load_data.keys() if not k.startswith('__')][0]
+        trandata = load_data[data_key]
+        
+    elif file_ext == '.csv':
+        # Load .csv file
+        df = pd.read_csv(dataset_path)
+        
+        # Convert categorical columns to numerical
+        for col in df.select_dtypes(include=['object']).columns:
+            df[col] = df[col].astype('category').cat.codes
+        
+        # Convert to numpy array
+        trandata = df.values
+        
+    else:
+        raise ValueError(f"Unsupported file format: {file_ext}. Use .mat or .csv")
+    
+    # Handle NaN and Inf values
+    trandata = np.nan_to_num(trandata, nan=0.0, posinf=1.0, neginf=0.0)
     
     # Normalize numerical columns to [0,1]
     scaler = MinMaxScaler()
