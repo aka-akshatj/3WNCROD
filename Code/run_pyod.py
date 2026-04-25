@@ -151,12 +151,16 @@ def main():
             print(f"{'='*60}")
             
             try:
-                # Construct dataset path
-                dataset_path = f'./Datasets/{dataset_name}.mat'
+                # Try to find dataset (.mat or .csv)
+                dataset_path_mat = f'./Datasets/{dataset_name}.mat'
+                dataset_path_csv = f'./Datasets/{dataset_name}.csv'
                 
-                # Check if file exists
-                if not os.path.exists(dataset_path):
-                    print(f"ERROR: File not found: {dataset_path}")
+                if os.path.exists(dataset_path_mat):
+                    dataset_path = dataset_path_mat
+                elif os.path.exists(dataset_path_csv):
+                    dataset_path = dataset_path_csv
+                else:
+                    print(f"ERROR: File not found: {dataset_path_mat} or {dataset_path_csv}")
                     timing_summary.append({
                         'dataset': dataset_name,
                         'status': 'file_not_found',
