@@ -113,12 +113,18 @@ def detect_outliers_pyod(data, algorithm='IForest', **kwargs):
     elif algorithm == 'AUTOENCODER':
         if not AUTOENCODER_AVAILABLE:
             raise ImportError("AutoEncoder requires tensorflow/keras. Install with: pip install tensorflow")
-        # AutoEncoder requires specific parameters
+        # AutoEncoder requires specific parameters for this installed PyOD version
         ae_params = {
-            'hidden_neurons': [data.shape[1]//2, data.shape[1]//4],
-            'epochs': 50,
+            'hidden_neuron_list': [data.shape[1]//2, data.shape[1]//4],
+            'epoch_num': 50,
             'batch_size': 32,
-            'verbose': 0
+            'verbose': 0,
+            'preprocessing': True,
+            'lr': 0.001,
+            'optimizer_name': 'adam',
+            'hidden_activation_name': 'relu',
+            'batch_norm': True,
+            'dropout_rate': 0.2
         }
         ae_params.update(kwargs)
         model = AutoEncoder(**ae_params)

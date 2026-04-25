@@ -46,8 +46,11 @@ algorithms = [
     'LOF',        # Local Outlier Factor
     'COPOD',      # Copula-based Outlier Detection
     'HBOS',       # Histogram-based Outlier Score
-    'KNN'         # k-Nearest Neighbors
+    'KNN',        # k-Nearest Neighbors
+    'AutoEncoder'
 ]
+
+# algorithms = ['AutoEncoder']
 
 # Optional: Use fewer algorithms for faster testing
 # algorithms = ['IForest', 'COPOD', 'HBOS']
