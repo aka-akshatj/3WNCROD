@@ -1,0 +1,432 @@
+============================================================
+WNCROD Outlier Detection - Batch Processing
+============================================================
+Lambda parameter: 1
+Datasets: 10
+Started at: 2025-12-07 21:53:51
+Output log: output_logs\wncrod_output_20251207_215351.txt
+============================================================
+
+============================================================
+Processing dataset 1/10: annthyroid
+Started at: 21:53:51
+============================================================
+Data shape: (7200, 7)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 7200 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for annthyroid:
+============================================================
+Outlier scores computed: 7200 samples
+Min score: 0.000000
+Max score: 0.395657
+Mean score: 0.002018
+Std score: 0.015359
+
+Top 10 anomalies (highest scores):
+  Sample 3862: 0.395657
+  Sample 5411: 0.394386
+  Sample 2774: 0.394154
+  Sample 6373: 0.353879
+  Sample 3943: 0.340177
+  Sample 7058: 0.276458
+  Sample 2209: 0.250478
+  Sample 4671: 0.234449
+  Sample 4479: 0.229023
+  Sample 2702: 0.225474
+
+============================================================
+Timing Summary for annthyroid:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 101.46 seconds (1.69 minutes)
+  Total dataset time: 101.46 seconds (1.69 minutes)
+============================================================
+
+============================================================
+Processing dataset 2/10: creditA_plus_42_variant1
+Started at: 21:55:33
+============================================================
+Data shape: (425, 16)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 425 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for creditA_plus_42_variant1:
+============================================================
+Outlier scores computed: 425 samples
+Min score: 0.000000
+Max score: 0.005308
+Mean score: 0.000073
+Std score: 0.000450
+
+Top 10 anomalies (highest scores):
+  Sample 71: 0.005308
+  Sample 61: 0.004109
+  Sample 139: 0.003701
+  Sample 295: 0.003680
+  Sample 59: 0.002117
+  Sample 62: 0.001813
+  Sample 77: 0.001088
+  Sample 195: 0.001087
+  Sample 64: 0.001002
+  Sample 74: 0.000969
+
+============================================================
+Timing Summary for creditA_plus_42_variant1:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 1.21 seconds (0.02 minutes)
+  Total dataset time: 1.22 seconds (0.02 minutes)
+============================================================
+
+============================================================
+Processing dataset 3/10: german_1_14_variant1
+Started at: 21:55:34
+============================================================
+Data shape: (714, 21)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 714 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for german_1_14_variant1:
+============================================================
+Outlier scores computed: 714 samples
+Min score: 0.000000
+Max score: 0.005864
+Mean score: 0.000013
+Std score: 0.000223
+
+Top 10 anomalies (highest scores):
+  Sample 278: 0.005864
+  Sample 541: 0.000486
+  Sample 43: 0.000436
+  Sample 610: 0.000434
+  Sample 234: 0.000383
+  Sample 256: 0.000378
+  Sample 656: 0.000346
+  Sample 344: 0.000344
+  Sample 671: 0.000318
+  Sample 205: 0.000268
+
+============================================================
+Timing Summary for german_1_14_variant1:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 3.68 seconds (0.06 minutes)
+  Total dataset time: 3.68 seconds (0.06 minutes)
+============================================================
+
+============================================================
+Processing dataset 4/10: heart270_2_16_variant1
+Started at: 21:55:38
+============================================================
+Data shape: (166, 14)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 166 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for heart270_2_16_variant1:
+============================================================
+Outlier scores computed: 166 samples
+Min score: 0.000000
+Max score: 0.073942
+Mean score: 0.001343
+Std score: 0.006020
+
+Top 10 anomalies (highest scores):
+  Sample 69: 0.073942
+  Sample 137: 0.018725
+  Sample 4: 0.007950
+  Sample 149: 0.007606
+  Sample 34: 0.006411
+  Sample 64: 0.005617
+  Sample 145: 0.005554
+  Sample 22: 0.005307
+  Sample 106: 0.005269
+  Sample 140: 0.005246
+
+============================================================
+Timing Summary for heart270_2_16_variant1:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 0.21 seconds (0.00 minutes)
+  Total dataset time: 0.22 seconds (0.00 minutes)
+============================================================
+
+============================================================
+Processing dataset 5/10: lymphography
+Started at: 21:55:38
+============================================================
+Data shape: (148, 19)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 148 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for lymphography:
+============================================================
+Outlier scores computed: 148 samples
+Min score: 0.000000
+Max score: 0.006809
+Mean score: 0.000178
+Std score: 0.000866
+
+Top 10 anomalies (highest scores):
+  Sample 14: 0.006809
+  Sample 78: 0.006024
+  Sample 139: 0.003338
+  Sample 58: 0.002644
+  Sample 2: 0.002640
+  Sample 110: 0.001758
+  Sample 49: 0.001574
+  Sample 9: 0.001549
+  Sample 42: 0.000000
+  Sample 43: 0.000000
+
+============================================================
+Timing Summary for lymphography:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 0.27 seconds (0.00 minutes)
+  Total dataset time: 0.28 seconds (0.00 minutes)
+============================================================
+
+============================================================
+Processing dataset 6/10: mammography
+Started at: 21:55:38
+============================================================
+Data shape: (11183, 7)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 11183 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for mammography:
+============================================================
+Outlier scores computed: 11183 samples
+Min score: 0.000000
+Max score: 0.047600
+Mean score: 0.000035
+Std score: 0.000764
+
+Top 10 anomalies (highest scores):
+  Sample 5570: 0.047600
+  Sample 2221: 0.029520
+  Sample 3335: 0.027890
+  Sample 6707: 0.020220
+  Sample 1098: 0.020130
+  Sample 3337: 0.019330
+  Sample 1094: 0.019187
+  Sample 10046: 0.018066
+  Sample 11180: 0.014795
+  Sample 6697: 0.013949
+
+============================================================
+Timing Summary for mammography:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 253.65 seconds (4.23 minutes)
+  Total dataset time: 253.66 seconds (4.23 minutes)
+============================================================
+
+============================================================
+Processing dataset 7/10: mushroom_p_221_variant1
+Started at: 21:59:52
+============================================================
+Data shape: (4429, 23)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 4429 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for mushroom_p_221_variant1:
+============================================================
+Outlier scores computed: 4429 samples
+Min score: 0.000000
+Max score: 0.000000
+Mean score: 0.000000
+Std score: 0.000000
+
+Top 10 anomalies (highest scores):
+  Sample 4428: 0.000000
+  Sample 1477: 0.000000
+  Sample 1471: 0.000000
+  Sample 1472: 0.000000
+  Sample 1473: 0.000000
+  Sample 1474: 0.000000
+  Sample 1475: 0.000000
+  Sample 1476: 0.000000
+  Sample 1478: 0.000000
+  Sample 1486: 0.000000
+
+============================================================
+Timing Summary for mushroom_p_221_variant1:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 121.07 seconds (2.02 minutes)
+  Total dataset time: 121.08 seconds (2.02 minutes)
+============================================================
+
+============================================================
+Processing dataset 8/10: musk
+Started at: 22:01:53
+============================================================
+Data shape: (3062, 167)
+Load time: 0.03 seconds
+Normalization time: 0.01 seconds
+Using 3062 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for musk:
+============================================================
+Outlier scores computed: 3062 samples
+Min score: 0.000000
+Max score: 0.000000
+Mean score: 0.000000
+Std score: 0.000000
+
+Top 10 anomalies (highest scores):
+  Sample 3061: 0.000000
+  Sample 1016: 0.000000
+  Sample 1025: 0.000000
+  Sample 1024: 0.000000
+  Sample 1023: 0.000000
+  Sample 1022: 0.000000
+  Sample 1021: 0.000000
+  Sample 1020: 0.000000
+  Sample 1019: 0.000000
+  Sample 1018: 0.000000
+
+============================================================
+Timing Summary for musk:
+  Load time: 0.03 seconds
+  Normalization time: 0.01 seconds
+  WNCROD computation: 434.99 seconds (7.25 minutes)
+  Total dataset time: 435.02 seconds (7.25 minutes)
+============================================================
+
+============================================================
+Processing dataset 9/10: thyroid
+Started at: 22:09:08
+============================================================
+Data shape: (3772, 7)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 3772 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for thyroid:
+============================================================
+Outlier scores computed: 3772 samples
+Min score: 0.000000
+Max score: 0.427301
+Mean score: 0.002108
+Std score: 0.014735
+
+Top 10 anomalies (highest scores):
+  Sample 2774: 0.427301
+  Sample 2209: 0.259423
+  Sample 2702: 0.239220
+  Sample 1268: 0.220613
+  Sample 794: 0.187594
+  Sample 3164: 0.176001
+  Sample 3565: 0.172960
+  Sample 2931: 0.165258
+  Sample 2628: 0.162764
+  Sample 3429: 0.153771
+
+============================================================
+Timing Summary for thyroid:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 27.03 seconds (0.45 minutes)
+  Total dataset time: 27.04 seconds (0.45 minutes)
+============================================================
+
+============================================================
+Processing dataset 10/10: wdbc_M_39_variant1
+Started at: 22:09:35
+============================================================
+Data shape: (396, 32)
+Load time: 0.00 seconds
+Normalization time: 0.00 seconds
+Using 396 samples for WNCROD computation
+Starting WNCROD computation...
+
+============================================================
+Results for wdbc_M_39_variant1:
+============================================================
+Outlier scores computed: 396 samples
+Min score: 0.000000
+Max score: 0.079844
+Mean score: 0.000845
+Std score: 0.004750
+
+Top 10 anomalies (highest scores):
+  Sample 175: 0.079844
+  Sample 27: 0.031125
+  Sample 217: 0.022241
+  Sample 393: 0.020808
+  Sample 5: 0.015191
+  Sample 143: 0.009764
+  Sample 229: 0.009061
+  Sample 273: 0.008368
+  Sample 313: 0.008233
+  Sample 102: 0.008040
+
+============================================================
+Timing Summary for wdbc_M_39_variant1:
+  Load time: 0.00 seconds
+  Normalization time: 0.00 seconds
+  WNCROD computation: 1.92 seconds (0.03 minutes)
+  Total dataset time: 1.92 seconds (0.03 minutes)
+============================================================
+
+
+============================================================
+FINAL SUMMARY
+============================================================
+Total runtime: 945.79 seconds (15.76 minutes, 0.26 hours)
+
+Per-dataset timing:
+Dataset                        Status          WNCROD Time (min)    Total Time (min)     Shape               
+---------------------------------------------------------------------------------------------------------
+annthyroid                     success         1.69                 1.69                 (7200, 7)           
+creditA_plus_42_variant1       success         0.02                 0.02                 (425, 16)           
+german_1_14_variant1           success         0.06                 0.06                 (714, 21)           
+heart270_2_16_variant1         success         0.00                 0.00                 (166, 14)           
+lymphography                   success         0.00                 0.00                 (148, 19)           
+mammography                    success         4.23                 4.23                 (11183, 7)          
+mushroom_p_221_variant1        success         2.02                 2.02                 (4429, 23)          
+musk                           success         7.25                 7.25                 (3062, 167)         
+thyroid                        success         0.45                 0.45                 (3772, 7)           
+wdbc_M_39_variant1             success         0.03                 0.03                 (396, 32)           
+
+============================================================
+Performance Statistics
+============================================================
+Average WNCROD computation time: 94.55 seconds (1.58 minutes)
+Average total time per dataset: 94.56 seconds (1.58 minutes)
+Total WNCROD computation time: 945.50 seconds (15.76 minutes)
+
+============================================================
+Completed at: 2025-12-07 22:09:37
+============================================================
+
+All output saved to: output_logs\wncrod_output_20251207_215351.txt
+============================================================

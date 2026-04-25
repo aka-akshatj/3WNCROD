@@ -1,0 +1,6 @@
+# Requirements for PyOD-based outlier detection
+pyod>=1.0.0
+numpy>=1.19.0
+scipy>=1.5.0
+scikit-learn>=0.24.0
+
