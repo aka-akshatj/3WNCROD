@@ -1,0 +1,2312 @@
+============================================================
+PyOD Outlier Detection - Batch Processing
+============================================================
+Algorithms: IForest, LOF, COPOD, HBOS, KNN, AutoEncoder
+Datasets: 17
+Started at: 2026-04-25 17:07:53
+Output log: output_logs\pyod_output_20260425_170753.txt
+============================================================
+
+============================================================
+Processing dataset 1/17: annthyroid
+Started at: 17:07:53
+============================================================
+Loading dataset: annthyroid
+Data shape: (7200, 7)
+
+  Running IForest...
+    Completed in 0.29 seconds
+    Detected 720 outliers (10.00%)
+
+  Running LOF...
+    Completed in 0.30 seconds
+    Detected 720 outliers (10.00%)
+
+  Running COPOD...
+    Completed in 0.60 seconds
+    Detected 720 outliers (10.00%)
+
+  Running HBOS...
+    Completed in 4.52 seconds
+    Detected 717 outliers (9.96%)
+
+  Running KNN...
+    Completed in 0.28 seconds
+    Detected 720 outliers (10.00%)
+
+  Running AutoEncoder...
+    Completed in 48.05 seconds
+    Detected 720 outliers (10.00%)
+
+============================================================
+Results for: annthyroid
+============================================================
+Data shape: (7200, 7)
+
+IForest:
+  Fit time: 0.29 seconds (0.00 minutes)
+  Outliers detected: 720 (10.00%)
+  Score statistics:
+    Min: -0.175722
+    Max: 0.232939
+    Mean: -0.104229
+    Std: 0.068847
+  Top 10 anomalies:
+    Sample 5411: 0.232939
+    Sample 6373: 0.222891
+    Sample 7058: 0.215095
+    Sample 2774: 0.214391
+    Sample 1524: 0.208308
+    Sample 2931: 0.204800
+    Sample 5416: 0.201167
+    Sample 1882: 0.198572
+    Sample 2702: 0.197278
+    Sample 5623: 0.197189
+
+LOF:
+  Fit time: 0.30 seconds (0.00 minutes)
+  Outliers detected: 720 (10.00%)
+  Score statistics:
+    Min: 0.921972
+    Max: 4.284094
+    Mean: 1.115051
+    Std: 0.191362
+  Top 10 anomalies:
+    Sample 6446: 4.284094
+    Sample 6557: 4.055813
+    Sample 2511: 3.837388
+    Sample 2527: 3.808452
+    Sample 5140: 3.557067
+    Sample 5335: 3.555555
+    Sample 3301: 3.305333
+    Sample 3731: 3.263450
+    Sample 5885: 3.167128
+    Sample 5416: 3.039904
+
+COPOD:
+  Fit time: 0.60 seconds (0.01 minutes)
+  Outliers detected: 720 (10.00%)
+  Score statistics:
+    Min: 4.060208
+    Max: 30.857578
+    Mean: 8.062841
+    Std: 3.017612
+  Top 10 anomalies:
+    Sample 5416: 30.857578
+    Sample 5885: 26.924456
+    Sample 5065: 26.183201
+    Sample 742: 25.030141
+    Sample 4704: 24.646479
+    Sample 7058: 24.380048
+    Sample 7094: 24.379321
+    Sample 1258: 24.173822
+    Sample 6515: 24.131120
+    Sample 1881: 23.964671
+
+HBOS:
+  Fit time: 4.52 seconds (0.08 minutes)
+  Outliers detected: 717 (9.96%)
+  Score statistics:
+    Min: -18.420762
+    Max: 5.379196
+    Mean: -14.929109
+    Std: 3.554615
+  Top 10 anomalies:
+    Sample 2209: 5.379196
+    Sample 2774: 5.360337
+    Sample 5411: 4.873048
+    Sample 1524: 4.796770
+    Sample 6373: 4.306565
+    Sample 1620: 3.931256
+    Sample 1336: 3.463107
+    Sample 5623: 3.003445
+    Sample 7058: 2.984336
+    Sample 3862: 2.936926
+
+KNN:
+  Fit time: 0.28 seconds (0.00 minutes)
+  Outliers detected: 720 (10.00%)
+  Score statistics:
+    Min: 0.011739
+    Max: 0.982531
+    Mean: 0.055915
+    Std: 0.047740
+  Top 10 anomalies:
+    Sample 5416: 0.982531
+    Sample 4985: 0.772523
+    Sample 5885: 0.733471
+    Sample 1524: 0.696345
+    Sample 5411: 0.692200
+    Sample 2503: 0.690276
+    Sample 7058: 0.675028
+    Sample 2209: 0.643715
+    Sample 38: 0.637772
+    Sample 1882: 0.604979
+
+AutoEncoder:
+  Fit time: 48.05 seconds (0.80 minutes)
+  Outliers detected: 720 (10.00%)
+  Score statistics:
+    Min: 0.187440
+    Max: 27.134874
+    Mean: 2.031782
+    Std: 1.527628
+  Top 10 anomalies:
+    Sample 5416: 27.134874
+    Sample 2503: 23.251656
+    Sample 7058: 22.169249
+    Sample 5411: 21.934933
+    Sample 2209: 21.052315
+    Sample 1524: 20.846537
+    Sample 1882: 20.655714
+    Sample 6373: 20.452389
+    Sample 5885: 20.325928
+    Sample 2774: 19.606211
+
+============================================================
+Completed annthyroid in 54.08 seconds (0.90 minutes)
+============================================================
+
+============================================================
+Processing dataset 2/17: creditA_plus_42_variant1
+Started at: 17:08:47
+============================================================
+Loading dataset: creditA_plus_42_variant1
+Data shape: (425, 16)
+
+  Running IForest...
+    Completed in 0.22 seconds
+    Detected 43 outliers (10.12%)
+
+  Running LOF...
+    Completed in 0.34 seconds
+    Detected 43 outliers (10.12%)
+
+  Running COPOD...
+    Completed in 0.01 seconds
+    Detected 43 outliers (10.12%)
+
+  Running HBOS...
+    Completed in 0.01 seconds
+    Detected 43 outliers (10.12%)
+
+  Running KNN...
+    Completed in 0.02 seconds
+    Detected 43 outliers (10.12%)
+
+  Running AutoEncoder...
+    Completed in 2.60 seconds
+    Detected 43 outliers (10.12%)
+
+============================================================
+Results for: creditA_plus_42_variant1
+============================================================
+Data shape: (425, 16)
+
+IForest:
+  Fit time: 0.22 seconds (0.00 minutes)
+  Outliers detected: 43 (10.12%)
+  Score statistics:
+    Min: -0.178111
+    Max: 0.191418
+    Mean: -0.092641
+    Std: 0.060059
+  Top 10 anomalies:
+    Sample 139: 0.191418
+    Sample 6: 0.153630
+    Sample 141: 0.136763
+    Sample 7: 0.095712
+    Sample 336: 0.072620
+    Sample 63: 0.069619
+    Sample 59: 0.065653
+    Sample 0: 0.061456
+    Sample 78: 0.057113
+    Sample 61: 0.055871
+
+LOF:
+  Fit time: 0.34 seconds (0.01 minutes)
+  Outliers detected: 43 (10.12%)
+  Score statistics:
+    Min: 0.953445
+    Max: 2.568323
+    Mean: 1.097693
+    Std: 0.169658
+  Top 10 anomalies:
+    Sample 139: 2.568323
+    Sample 8: 2.137278
+    Sample 148: 1.939589
+    Sample 145: 1.925932
+    Sample 274: 1.903050
+    Sample 242: 1.880995
+    Sample 141: 1.864437
+    Sample 163: 1.743492
+    Sample 140: 1.670445
+    Sample 303: 1.550260
+
+COPOD:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 43 (10.12%)
+  Score statistics:
+    Min: 5.461867
+    Max: 39.339057
+    Mean: 12.264870
+    Std: 4.599495
+  Top 10 anomalies:
+    Sample 139: 39.339057
+    Sample 6: 31.403419
+    Sample 141: 27.909646
+    Sample 333: 27.301115
+    Sample 78: 27.226690
+    Sample 77: 26.700699
+    Sample 64: 26.507120
+    Sample 73: 26.219791
+    Sample 338: 26.125874
+    Sample 60: 25.726049
+
+HBOS:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 43 (10.12%)
+  Score statistics:
+    Min: -43.484448
+    Max: -3.874692
+    Mean: -31.447505
+    Std: 7.988989
+  Top 10 anomalies:
+    Sample 139: -3.874692
+    Sample 6: -5.440261
+    Sample 61: -7.515417
+    Sample 63: -9.142970
+    Sample 336: -10.042077
+    Sample 7: -10.377885
+    Sample 69: -10.914900
+    Sample 141: -11.203617
+    Sample 59: -11.537829
+    Sample 140: -13.438034
+
+KNN:
+  Fit time: 0.02 seconds (0.00 minutes)
+  Outliers detected: 43 (10.12%)
+  Score statistics:
+    Min: 0.265589
+    Max: 2.101748
+    Mean: 0.835397
+    Std: 0.324625
+  Top 10 anomalies:
+    Sample 139: 2.101748
+    Sample 6: 1.795182
+    Sample 141: 1.722719
+    Sample 336: 1.535658
+    Sample 63: 1.528454
+    Sample 7: 1.524798
+    Sample 66: 1.522009
+    Sample 334: 1.503721
+    Sample 77: 1.502764
+    Sample 65: 1.501552
+
+AutoEncoder:
+  Fit time: 2.60 seconds (0.04 minutes)
+  Outliers detected: 43 (10.12%)
+  Score statistics:
+    Min: 1.802910
+    Max: 18.489544
+    Mean: 3.315368
+    Std: 1.285324
+  Top 10 anomalies:
+    Sample 139: 18.489544
+    Sample 225: 10.281003
+    Sample 6: 9.760187
+    Sample 59: 9.566456
+    Sample 141: 7.257688
+    Sample 0: 7.013834
+    Sample 7: 6.599131
+    Sample 145: 6.105226
+    Sample 334: 6.018273
+    Sample 336: 5.905610
+
+============================================================
+Completed creditA_plus_42_variant1 in 3.26 seconds (0.05 minutes)
+============================================================
+
+============================================================
+Processing dataset 3/17: german_1_14_variant1
+Started at: 17:08:51
+============================================================
+Loading dataset: german_1_14_variant1
+Data shape: (714, 21)
+
+  Running IForest...
+    Completed in 0.22 seconds
+    Detected 72 outliers (10.08%)
+
+  Running LOF...
+    Completed in 0.02 seconds
+    Detected 72 outliers (10.08%)
+
+  Running COPOD...
+    Completed in 0.00 seconds
+    Detected 72 outliers (10.08%)
+
+  Running HBOS...
+    Completed in 0.01 seconds
+    Detected 72 outliers (10.08%)
+
+  Running KNN...
+    Completed in 0.03 seconds
+    Detected 72 outliers (10.08%)
+
+  Running AutoEncoder...
+    Completed in 4.41 seconds
+    Detected 72 outliers (10.08%)
+
+============================================================
+Results for: german_1_14_variant1
+============================================================
+Data shape: (714, 21)
+
+IForest:
+  Fit time: 0.22 seconds (0.00 minutes)
+  Outliers detected: 72 (10.08%)
+  Score statistics:
+    Min: -0.140768
+    Max: 0.133198
+    Mean: -0.062600
+    Std: 0.046210
+  Top 10 anomalies:
+    Sample 655: 0.133198
+    Sample 278: 0.122660
+    Sample 321: 0.115815
+    Sample 693: 0.109566
+    Sample 661: 0.104584
+    Sample 171: 0.101461
+    Sample 141: 0.096959
+    Sample 541: 0.093284
+    Sample 248: 0.089269
+    Sample 335: 0.083610
+
+LOF:
+  Fit time: 0.02 seconds (0.00 minutes)
+  Outliers detected: 72 (10.08%)
+  Score statistics:
+    Min: 0.956225
+    Max: 1.556892
+    Mean: 1.077250
+    Std: 0.094909
+  Top 10 anomalies:
+    Sample 171: 1.556892
+    Sample 328: 1.469221
+    Sample 655: 1.464110
+    Sample 693: 1.445196
+    Sample 517: 1.440857
+    Sample 321: 1.436579
+    Sample 33: 1.434251
+    Sample 335: 1.428410
+    Sample 106: 1.418240
+    Sample 585: 1.404800
+
+COPOD:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 72 (10.08%)
+  Score statistics:
+    Min: 8.324786
+    Max: 35.902527
+    Mean: 14.638887
+    Std: 3.855152
+  Top 10 anomalies:
+    Sample 278: 35.902527
+    Sample 655: 34.079533
+    Sample 321: 29.237587
+    Sample 72: 29.161395
+    Sample 541: 29.151546
+    Sample 693: 28.121272
+    Sample 141: 27.488363
+    Sample 171: 27.446613
+    Sample 661: 26.974170
+    Sample 553: 26.825238
+
+HBOS:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 72 (10.08%)
+  Score statistics:
+    Min: -50.396276
+    Max: -3.935499
+    Mean: -36.477745
+    Std: 6.713398
+  Top 10 anomalies:
+    Sample 278: -3.935499
+    Sample 655: -5.610245
+    Sample 141: -12.740927
+    Sample 553: -13.511660
+    Sample 321: -15.404796
+    Sample 579: -15.475724
+    Sample 248: -15.796192
+    Sample 440: -16.606445
+    Sample 441: -17.159752
+    Sample 231: -17.195031
+
+KNN:
+  Fit time: 0.03 seconds (0.00 minutes)
+  Outliers detected: 72 (10.08%)
+  Score statistics:
+    Min: 0.792461
+    Max: 2.140820
+    Mean: 1.244270
+    Std: 0.224011
+  Top 10 anomalies:
+    Sample 655: 2.140820
+    Sample 278: 2.049764
+    Sample 693: 2.026422
+    Sample 321: 2.019187
+    Sample 171: 1.975640
+    Sample 517: 1.946820
+    Sample 141: 1.922842
+    Sample 335: 1.920822
+    Sample 328: 1.884673
+    Sample 661: 1.876330
+
+AutoEncoder:
+  Fit time: 4.41 seconds (0.07 minutes)
+  Outliers detected: 72 (10.08%)
+  Score statistics:
+    Min: 2.089571
+    Max: 10.696204
+    Mean: 4.031165
+    Std: 1.134637
+  Top 10 anomalies:
+    Sample 655: 10.696204
+    Sample 171: 9.737009
+    Sample 278: 9.688362
+    Sample 693: 9.454124
+    Sample 321: 9.033727
+    Sample 72: 8.845942
+    Sample 335: 8.790083
+    Sample 517: 8.766328
+    Sample 141: 8.727703
+    Sample 661: 8.692026
+
+============================================================
+Completed german_1_14_variant1 in 4.71 seconds (0.08 minutes)
+============================================================
+
+============================================================
+Processing dataset 4/17: heart270_2_16_variant1
+Started at: 17:08:55
+============================================================
+Loading dataset: heart270_2_16_variant1
+Data shape: (166, 14)
+
+  Running IForest...
+    Completed in 0.21 seconds
+    Detected 17 outliers (10.24%)
+
+  Running LOF...
+    Completed in 0.00 seconds
+    Detected 17 outliers (10.24%)
+
+  Running COPOD...
+    Completed in 0.00 seconds
+    Detected 17 outliers (10.24%)
+
+  Running HBOS...
+    Completed in 0.00 seconds
+    Detected 17 outliers (10.24%)
+
+  Running KNN...
+    Completed in 0.00 seconds
+    Detected 17 outliers (10.24%)
+
+  Running AutoEncoder...
+    Completed in 1.00 seconds
+    Detected 17 outliers (10.24%)
+
+============================================================
+Results for: heart270_2_16_variant1
+============================================================
+Data shape: (166, 14)
+
+IForest:
+  Fit time: 0.21 seconds (0.00 minutes)
+  Outliers detected: 17 (10.24%)
+  Score statistics:
+    Min: -0.194266
+    Max: 0.091762
+    Mean: -0.099125
+    Std: 0.065634
+  Top 10 anomalies:
+    Sample 145: 0.091762
+    Sample 69: 0.072506
+    Sample 137: 0.056446
+    Sample 105: 0.050697
+    Sample 92: 0.044505
+    Sample 29: 0.035800
+    Sample 4: 0.034233
+    Sample 95: 0.032577
+    Sample 84: 0.031311
+    Sample 140: 0.028179
+
+LOF:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 17 (10.24%)
+  Score statistics:
+    Min: 0.971850
+    Max: 1.775103
+    Mean: 1.130111
+    Std: 0.157643
+  Top 10 anomalies:
+    Sample 105: 1.775103
+    Sample 35: 1.567133
+    Sample 127: 1.567128
+    Sample 0: 1.530999
+    Sample 70: 1.520245
+    Sample 62: 1.472303
+    Sample 98: 1.466074
+    Sample 118: 1.464956
+    Sample 56: 1.461598
+    Sample 26: 1.430355
+
+COPOD:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 17 (10.24%)
+  Score statistics:
+    Min: 5.213163
+    Max: 26.847644
+    Mean: 10.797837
+    Std: 4.157256
+  Top 10 anomalies:
+    Sample 69: 26.847644
+    Sample 145: 23.714183
+    Sample 115: 21.347541
+    Sample 4: 21.268737
+    Sample 22: 21.199637
+    Sample 137: 20.762275
+    Sample 64: 20.193409
+    Sample 92: 20.094075
+    Sample 106: 20.057205
+    Sample 105: 19.936898
+
+HBOS:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 17 (10.24%)
+  Score statistics:
+    Min: -32.093851
+    Max: -4.177546
+    Mean: -23.540548
+    Std: 6.378615
+  Top 10 anomalies:
+    Sample 64: -4.177546
+    Sample 69: -6.477251
+    Sample 29: -6.982388
+    Sample 115: -7.337504
+    Sample 4: -8.147185
+    Sample 95: -8.563717
+    Sample 109: -8.993057
+    Sample 106: -9.001159
+    Sample 140: -9.340944
+    Sample 145: -9.421712
+
+KNN:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 17 (10.24%)
+  Score statistics:
+    Min: 0.495240
+    Max: 2.124431
+    Mean: 1.106922
+    Std: 0.367182
+  Top 10 anomalies:
+    Sample 69: 2.124431
+    Sample 145: 2.055365
+    Sample 137: 1.962175
+    Sample 95: 1.944850
+    Sample 140: 1.923683
+    Sample 92: 1.905916
+    Sample 106: 1.882566
+    Sample 4: 1.877136
+    Sample 149: 1.856892
+    Sample 105: 1.850850
+
+AutoEncoder:
+  Fit time: 1.00 seconds (0.02 minutes)
+  Outliers detected: 17 (10.24%)
+  Score statistics:
+    Min: 1.752669
+    Max: 6.727919
+    Mean: 3.357258
+    Std: 0.998987
+  Top 10 anomalies:
+    Sample 145: 6.727919
+    Sample 137: 6.374598
+    Sample 0: 6.328115
+    Sample 92: 5.826003
+    Sample 106: 5.809728
+    Sample 29: 5.759489
+    Sample 4: 5.519235
+    Sample 105: 5.467404
+    Sample 84: 5.429397
+    Sample 109: 5.388551
+
+============================================================
+Completed heart270_2_16_variant1 in 1.25 seconds (0.02 minutes)
+============================================================
+
+============================================================
+Processing dataset 5/17: lymphography
+Started at: 17:08:57
+============================================================
+Loading dataset: lymphography
+Data shape: (148, 19)
+
+  Running IForest...
+    Completed in 0.19 seconds
+    Detected 15 outliers (10.14%)
+
+  Running LOF...
+    Completed in 0.01 seconds
+    Detected 15 outliers (10.14%)
+
+  Running COPOD...
+    Completed in 0.00 seconds
+    Detected 15 outliers (10.14%)
+
+  Running HBOS...
+    Completed in 0.00 seconds
+    Detected 15 outliers (10.14%)
+
+  Running KNN...
+    Completed in 0.01 seconds
+    Detected 15 outliers (10.14%)
+
+  Running AutoEncoder...
+    Completed in 0.87 seconds
+    Detected 15 outliers (10.14%)
+
+============================================================
+Results for: lymphography
+============================================================
+Data shape: (148, 19)
+
+IForest:
+  Fit time: 0.19 seconds (0.00 minutes)
+  Outliers detected: 15 (10.14%)
+  Score statistics:
+    Min: -0.134925
+    Max: 0.133968
+    Mean: -0.061508
+    Std: 0.052305
+  Top 10 anomalies:
+    Sample 14: 0.133968
+    Sample 139: 0.132891
+    Sample 44: 0.104199
+    Sample 36: 0.102704
+    Sample 78: 0.101374
+    Sample 136: 0.074723
+    Sample 58: 0.042864
+    Sample 90: 0.031253
+    Sample 41: 0.028860
+    Sample 65: 0.028373
+
+LOF:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 15 (10.14%)
+  Score statistics:
+    Min: 0.970269
+    Max: 1.544800
+    Mean: 1.046396
+    Std: 0.085369
+  Top 10 anomalies:
+    Sample 36: 1.544800
+    Sample 139: 1.504363
+    Sample 14: 1.413975
+    Sample 65: 1.357921
+    Sample 136: 1.260614
+    Sample 44: 1.235476
+    Sample 78: 1.225918
+    Sample 58: 1.187541
+    Sample 24: 1.149779
+    Sample 90: 1.148467
+
+COPOD:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 15 (10.14%)
+  Score statistics:
+    Min: 4.700088
+    Max: 29.254645
+    Mean: 10.115577
+    Std: 4.113653
+  Top 10 anomalies:
+    Sample 139: 29.254645
+    Sample 14: 28.628531
+    Sample 78: 26.868841
+    Sample 44: 24.239430
+    Sample 36: 23.945190
+    Sample 58: 21.097382
+    Sample 136: 20.921729
+    Sample 2: 18.639544
+    Sample 144: 18.221736
+    Sample 24: 16.830298
+
+HBOS:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 15 (10.14%)
+  Score statistics:
+    Min: -48.629206
+    Max: -15.914458
+    Mean: -38.068714
+    Std: 5.772989
+  Top 10 anomalies:
+    Sample 44: -15.914458
+    Sample 139: -17.913144
+    Sample 14: -18.072510
+    Sample 78: -18.942747
+    Sample 136: -21.749902
+    Sample 36: -22.623869
+    Sample 58: -27.143570
+    Sample 122: -27.548629
+    Sample 24: -28.233349
+    Sample 90: -30.233148
+
+KNN:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 15 (10.14%)
+  Score statistics:
+    Min: 1.153964
+    Max: 2.743576
+    Mean: 1.522249
+    Std: 0.265598
+  Top 10 anomalies:
+    Sample 139: 2.743576
+    Sample 14: 2.603090
+    Sample 36: 2.540600
+    Sample 44: 2.359667
+    Sample 136: 2.124391
+    Sample 78: 2.088327
+    Sample 58: 2.068690
+    Sample 2: 2.058250
+    Sample 122: 1.898502
+    Sample 41: 1.860498
+
+AutoEncoder:
+  Fit time: 0.87 seconds (0.01 minutes)
+  Outliers detected: 15 (10.14%)
+  Score statistics:
+    Min: 2.487827
+    Max: 11.005567
+    Mean: 4.065269
+    Std: 1.383823
+  Top 10 anomalies:
+    Sample 14: 11.005567
+    Sample 139: 10.185771
+    Sample 36: 9.413818
+    Sample 44: 9.197310
+    Sample 78: 8.100229
+    Sample 58: 8.078089
+    Sample 2: 7.717675
+    Sample 136: 7.343441
+    Sample 131: 6.618764
+    Sample 41: 5.947329
+
+============================================================
+Completed lymphography in 1.12 seconds (0.02 minutes)
+============================================================
+
+============================================================
+Processing dataset 6/17: mammography
+Started at: 17:08:58
+============================================================
+Loading dataset: mammography
+Data shape: (11183, 7)
+
+  Running IForest...
+    Completed in 0.36 seconds
+    Detected 1119 outliers (10.01%)
+
+  Running LOF...
+    Completed in 0.68 seconds
+    Detected 1119 outliers (10.01%)
+
+  Running COPOD...
+    Completed in 0.02 seconds
+    Detected 1119 outliers (10.01%)
+
+  Running HBOS...
+    Completed in 0.01 seconds
+    Detected 1111 outliers (9.93%)
+
+  Running KNN...
+    Completed in 0.68 seconds
+    Detected 1119 outliers (10.01%)
+
+  Running AutoEncoder...
+    Completed in 68.13 seconds
+    Detected 1119 outliers (10.01%)
+
+============================================================
+Results for: mammography
+============================================================
+Data shape: (11183, 7)
+
+IForest:
+  Fit time: 0.36 seconds (0.01 minutes)
+  Outliers detected: 1119 (10.01%)
+  Score statistics:
+    Min: -0.163803
+    Max: 0.264368
+    Mean: -0.093034
+    Std: 0.071696
+  Top 10 anomalies:
+    Sample 3335: 0.264368
+    Sample 5570: 0.260951
+    Sample 10046: 0.252099
+    Sample 2221: 0.246425
+    Sample 1098: 0.241814
+    Sample 3337: 0.240793
+    Sample 7822: 0.239523
+    Sample 6707: 0.229152
+    Sample 8942: 0.228395
+    Sample 8941: 0.227967
+
+LOF:
+  Fit time: 0.68 seconds (0.01 minutes)
+  Outliers detected: 1119 (10.01%)
+  Score statistics:
+    Min: 0.936082
+    Max: 29204217.245551
+    Mean: 22648.622810
+    Std: 682353.692397
+  Top 10 anomalies:
+    Sample 7888: 29204217.245551
+    Sample 5129: 21894902.739948
+    Sample 8050: 21894902.739948
+    Sample 2828: 21894902.739948
+    Sample 2514: 21894902.739948
+    Sample 991: 21894902.739948
+    Sample 11067: 20302541.091755
+    Sample 680: 20302541.091755
+    Sample 3204: 20302541.091755
+    Sample 1899: 20302541.091755
+
+COPOD:
+  Fit time: 0.02 seconds (0.00 minutes)
+  Outliers detected: 1119 (10.01%)
+  Score statistics:
+    Min: 2.611038
+    Max: 33.655859
+    Mean: 6.270533
+    Std: 3.585348
+  Top 10 anomalies:
+    Sample 3335: 33.655859
+    Sample 5570: 27.501763
+    Sample 2221: 25.019631
+    Sample 7822: 24.174023
+    Sample 3337: 24.147240
+    Sample 10046: 23.977229
+    Sample 8942: 23.962196
+    Sample 3356: 23.789773
+    Sample 2222: 23.706265
+    Sample 8930: 23.503795
+
+HBOS:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 1111 (9.93%)
+  Score statistics:
+    Min: -21.121861
+    Max: 11.955880
+    Mean: -18.203969
+    Std: 3.593615
+  Top 10 anomalies:
+    Sample 5570: 11.955880
+    Sample 3335: 10.269341
+    Sample 10046: 7.583451
+    Sample 6707: 6.611749
+    Sample 2221: 5.943026
+    Sample 1098: 4.734508
+    Sample 8921: 2.837244
+    Sample 8942: 2.622706
+    Sample 3356: 2.192135
+    Sample 3337: 2.060559
+
+KNN:
+  Fit time: 0.68 seconds (0.01 minutes)
+  Outliers detected: 1119 (10.01%)
+  Score statistics:
+    Min: 0.000000
+    Max: 1.039425
+    Mean: 0.030513
+    Std: 0.043816
+  Top 10 anomalies:
+    Sample 3335: 1.039425
+    Sample 8900: 0.931192
+    Sample 1757: 0.777056
+    Sample 11158: 0.774955
+    Sample 3607: 0.659003
+    Sample 7820: 0.631214
+    Sample 7450: 0.614200
+    Sample 2219: 0.603285
+    Sample 5570: 0.575125
+    Sample 359: 0.522713
+
+AutoEncoder:
+  Fit time: 68.13 seconds (1.14 minutes)
+  Outliers detected: 1119 (10.01%)
+  Score statistics:
+    Min: 0.458441
+    Max: 31.566799
+    Mean: 1.790541
+    Std: 1.289284
+  Top 10 anomalies:
+    Sample 8900: 31.566799
+    Sample 1757: 29.255693
+    Sample 7450: 23.791363
+    Sample 359: 20.550491
+    Sample 9892: 19.867025
+    Sample 3335: 18.873955
+    Sample 8146: 18.170815
+    Sample 3799: 16.195967
+    Sample 10004: 16.013124
+    Sample 3607: 15.646422
+
+============================================================
+Completed mammography in 69.91 seconds (1.17 minutes)
+============================================================
+
+============================================================
+Processing dataset 7/17: mushroom_p_221_variant1
+Started at: 17:10:08
+============================================================
+Loading dataset: mushroom_p_221_variant1
+Data shape: (4429, 23)
+
+  Running IForest...
+    Completed in 0.30 seconds
+    Detected 443 outliers (10.00%)
+
+  Running LOF...
+    Completed in 0.06 seconds
+    Detected 443 outliers (10.00%)
+
+  Running COPOD...
+    Completed in 0.03 seconds
+    Detected 443 outliers (10.00%)
+
+  Running HBOS...
+    Completed in 0.02 seconds
+    Detected 442 outliers (9.98%)
+
+  Running KNN...
+    Completed in 0.08 seconds
+    Detected 442 outliers (9.98%)
+
+  Running AutoEncoder...
+    Completed in 27.71 seconds
+    Detected 443 outliers (10.00%)
+
+============================================================
+Results for: mushroom_p_221_variant1
+============================================================
+Data shape: (4429, 23)
+
+IForest:
+  Fit time: 0.30 seconds (0.01 minutes)
+  Outliers detected: 443 (10.00%)
+  Score statistics:
+    Min: -0.202504
+    Max: 0.151189
+    Mean: -0.101755
+    Std: 0.068139
+  Top 10 anomalies:
+    Sample 4349: 0.151189
+    Sample 3886: 0.148087
+    Sample 4423: 0.145204
+    Sample 4114: 0.144285
+    Sample 4213: 0.143789
+    Sample 3963: 0.142640
+    Sample 4257: 0.142622
+    Sample 3966: 0.141706
+    Sample 4326: 0.141212
+    Sample 4068: 0.139676
+
+LOF:
+  Fit time: 0.06 seconds (0.00 minutes)
+  Outliers detected: 443 (10.00%)
+  Score statistics:
+    Min: 0.966509
+    Max: 6.189923
+    Mean: 1.022375
+    Std: 0.199609
+  Top 10 anomalies:
+    Sample 3402: 6.189923
+    Sample 3657: 6.030619
+    Sample 3616: 6.025999
+    Sample 4116: 4.307819
+    Sample 4083: 4.151377
+    Sample 4035: 4.124018
+    Sample 4067: 4.025799
+    Sample 3903: 4.000982
+    Sample 4212: 3.861072
+    Sample 4228: 3.836176
+
+COPOD:
+  Fit time: 0.03 seconds (0.00 minutes)
+  Outliers detected: 443 (10.00%)
+  Score statistics:
+    Min: 5.331879
+    Max: 56.794393
+    Mean: 13.055922
+    Std: 6.567259
+  Top 10 anomalies:
+    Sample 4083: 56.794393
+    Sample 4212: 53.902374
+    Sample 4035: 52.387673
+    Sample 4116: 50.316395
+    Sample 3903: 50.106038
+    Sample 4349: 49.938791
+    Sample 4228: 49.495655
+    Sample 4213: 48.042862
+    Sample 4423: 47.867513
+    Sample 3963: 47.440732
+
+HBOS:
+  Fit time: 0.02 seconds (0.00 minutes)
+  Outliers detected: 442 (9.98%)
+  Score statistics:
+    Min: -47.211013
+    Max: 14.793725
+    Mean: -31.217229
+    Std: 10.044291
+  Top 10 anomalies:
+    Sample 4116: 14.793725
+    Sample 4083: 14.699171
+    Sample 4423: 12.226720
+    Sample 4067: 12.177949
+    Sample 4035: 12.096270
+    Sample 4212: 12.083395
+    Sample 3903: 11.388298
+    Sample 4257: 9.610945
+    Sample 4349: 9.529265
+    Sample 4228: 9.480495
+
+KNN:
+  Fit time: 0.08 seconds (0.00 minutes)
+  Outliers detected: 442 (9.98%)
+  Score statistics:
+    Min: 0.167244
+    Max: 2.244778
+    Mean: 0.316509
+    Std: 0.192466
+  Top 10 anomalies:
+    Sample 4083: 2.244778
+    Sample 3903: 2.218358
+    Sample 4035: 2.217888
+    Sample 4116: 2.213345
+    Sample 4212: 2.204431
+    Sample 4165: 2.177042
+    Sample 4228: 2.177042
+    Sample 4067: 2.167836
+    Sample 3596: 1.698810
+    Sample 3772: 1.663117
+
+AutoEncoder:
+  Fit time: 27.71 seconds (0.46 minutes)
+  Outliers detected: 443 (10.00%)
+  Score statistics:
+    Min: 1.314704
+    Max: 10.609515
+    Mean: 2.883539
+    Std: 1.312125
+  Top 10 anomalies:
+    Sample 4083: 10.609515
+    Sample 4212: 10.596237
+    Sample 4035: 10.522157
+    Sample 3903: 10.509585
+    Sample 4228: 10.507225
+    Sample 4165: 10.490005
+    Sample 4116: 10.476100
+    Sample 4067: 10.459555
+    Sample 3963: 8.244034
+    Sample 4349: 8.177809
+
+============================================================
+Completed mushroom_p_221_variant1 in 28.23 seconds (0.47 minutes)
+============================================================
+
+============================================================
+Processing dataset 8/17: musk
+Started at: 17:10:36
+============================================================
+Loading dataset: musk
+Data shape: (3062, 167)
+
+  Running IForest...
+    Completed in 0.25 seconds
+    Detected 307 outliers (10.03%)
+
+  Running LOF...
+    Completed in 0.07 seconds
+    Detected 307 outliers (10.03%)
+
+  Running COPOD...
+    Completed in 0.17 seconds
+    Detected 307 outliers (10.03%)
+
+  Running HBOS...
+    Completed in 0.06 seconds
+    Detected 307 outliers (10.03%)
+
+  Running KNN...
+    Completed in 0.09 seconds
+    Detected 307 outliers (10.03%)
+
+  Running AutoEncoder...
+    Completed in 21.94 seconds
+    Detected 307 outliers (10.03%)
+
+============================================================
+Results for: musk
+============================================================
+Data shape: (3062, 167)
+
+IForest:
+  Fit time: 0.25 seconds (0.00 minutes)
+  Outliers detected: 307 (10.03%)
+  Score statistics:
+    Min: -0.083891
+    Max: 0.073727
+    Mean: -0.030352
+    Std: 0.025992
+  Top 10 anomalies:
+    Sample 94: 0.073727
+    Sample 63: 0.066503
+    Sample 41: 0.066503
+    Sample 52: 0.066503
+    Sample 75: 0.065282
+    Sample 68: 0.065019
+    Sample 66: 0.065019
+    Sample 19: 0.064665
+    Sample 74: 0.064665
+    Sample 30: 0.064665
+
+LOF:
+  Fit time: 0.07 seconds (0.00 minutes)
+  Outliers detected: 307 (10.03%)
+  Score statistics:
+    Min: 0.970635
+    Max: 1.406411
+    Mean: 1.028321
+    Std: 0.047970
+  Top 10 anomalies:
+    Sample 2520: 1.406411
+    Sample 2784: 1.388680
+    Sample 2842: 1.380401
+    Sample 2827: 1.356866
+    Sample 3054: 1.320495
+    Sample 1247: 1.314271
+    Sample 1450: 1.294442
+    Sample 1968: 1.291508
+    Sample 2078: 1.289310
+    Sample 1176: 1.283062
+
+COPOD:
+  Fit time: 0.17 seconds (0.00 minutes)
+  Outliers detected: 307 (10.03%)
+  Score statistics:
+    Min: 169.298595
+    Max: 285.370070
+    Mean: 213.618958
+    Std: 23.105666
+  Top 10 anomalies:
+    Sample 52: 285.370070
+    Sample 63: 283.541729
+    Sample 41: 283.162616
+    Sample 83: 282.118802
+    Sample 81: 281.945039
+    Sample 84: 280.964549
+    Sample 1095: 280.217679
+    Sample 887: 278.735782
+    Sample 32: 276.532567
+    Sample 85: 275.912093
+
+HBOS:
+  Fit time: 0.06 seconds (0.00 minutes)
+  Outliers detected: 307 (10.03%)
+  Score statistics:
+    Min: -223.891830
+    Max: 10.945848
+    Mean: -165.069938
+    Std: 33.331093
+  Top 10 anomalies:
+    Sample 29: 10.945848
+    Sample 27: 8.106088
+    Sample 25: 8.106088
+    Sample 85: 3.329160
+    Sample 28: 3.281841
+    Sample 26: 3.281841
+    Sample 79: -0.371671
+    Sample 76: -0.371671
+    Sample 73: -0.735328
+    Sample 48: -0.776105
+
+KNN:
+  Fit time: 0.09 seconds (0.00 minutes)
+  Outliers detected: 307 (10.03%)
+  Score statistics:
+    Min: 1.191572
+    Max: 3.045549
+    Mean: 1.714558
+    Std: 0.255167
+  Top 10 anomalies:
+    Sample 92: 3.045549
+    Sample 93: 3.045514
+    Sample 94: 3.017785
+    Sample 52: 2.677521
+    Sample 41: 2.676906
+    Sample 63: 2.675934
+    Sample 223: 2.588076
+    Sample 36: 2.568702
+    Sample 34: 2.568514
+    Sample 85: 2.535807
+
+AutoEncoder:
+  Fit time: 21.94 seconds (0.37 minutes)
+  Outliers detected: 307 (10.03%)
+  Score statistics:
+    Min: 3.245768
+    Max: 22.208021
+    Mean: 5.095823
+    Std: 1.120694
+  Top 10 anomalies:
+    Sample 32: 22.208021
+    Sample 36: 21.987885
+    Sample 34: 21.917429
+    Sample 85: 14.090762
+    Sample 63: 13.873322
+    Sample 52: 13.871020
+    Sample 41: 13.812100
+    Sample 93: 12.391017
+    Sample 92: 12.386946
+    Sample 31: 12.381660
+
+============================================================
+Completed musk in 22.66 seconds (0.38 minutes)
+============================================================
+
+============================================================
+Processing dataset 9/17: thyroid
+Started at: 17:10:59
+============================================================
+Loading dataset: thyroid
+Data shape: (3772, 7)
+
+  Running IForest...
+    Completed in 0.28 seconds
+    Detected 378 outliers (10.02%)
+
+  Running LOF...
+    Completed in 0.10 seconds
+    Detected 378 outliers (10.02%)
+
+  Running COPOD...
+    Completed in 0.01 seconds
+    Detected 378 outliers (10.02%)
+
+  Running HBOS...
+    Completed in 0.00 seconds
+    Detected 377 outliers (9.99%)
+
+  Running KNN...
+    Completed in 0.10 seconds
+    Detected 378 outliers (10.02%)
+
+  Running AutoEncoder...
+    Completed in 22.94 seconds
+    Detected 378 outliers (10.02%)
+
+============================================================
+Results for: thyroid
+============================================================
+Data shape: (3772, 7)
+
+IForest:
+  Fit time: 0.28 seconds (0.00 minutes)
+  Outliers detected: 378 (10.02%)
+  Score statistics:
+    Min: -0.150595
+    Max: 0.252890
+    Mean: -0.082335
+    Std: 0.071245
+  Top 10 anomalies:
+    Sample 2774: 0.252890
+    Sample 2931: 0.246579
+    Sample 1524: 0.245622
+    Sample 1336: 0.243984
+    Sample 742: 0.243713
+    Sample 2209: 0.240055
+    Sample 2628: 0.238037
+    Sample 2136: 0.237538
+    Sample 1620: 0.237522
+    Sample 2702: 0.235568
+
+LOF:
+  Fit time: 0.10 seconds (0.00 minutes)
+  Outliers detected: 378 (10.02%)
+  Score statistics:
+    Min: 0.950329
+    Max: 3.659417
+    Mean: 1.131734
+    Std: 0.202535
+  Top 10 anomalies:
+    Sample 2511: 3.659417
+    Sample 1344: 3.554146
+    Sample 2171: 3.524478
+    Sample 38: 3.196923
+    Sample 1376: 3.114176
+    Sample 255: 2.905902
+    Sample 818: 2.841258
+    Sample 2527: 2.833745
+    Sample 1881: 2.662798
+    Sample 2548: 2.647401
+
+COPOD:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 378 (10.02%)
+  Score statistics:
+    Min: 4.059059
+    Max: 24.971282
+    Mean: 7.909771
+    Std: 3.087230
+  Top 10 anomalies:
+    Sample 742: 24.971282
+    Sample 1881: 24.587963
+    Sample 1258: 24.422644
+    Sample 3122: 24.002817
+    Sample 1524: 23.906189
+    Sample 2906: 23.434938
+    Sample 38: 23.423224
+    Sample 2774: 23.257764
+    Sample 2160: 23.219292
+    Sample 82: 23.100324
+
+HBOS:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 377 (9.99%)
+  Score statistics:
+    Min: -18.338985
+    Max: 9.746299
+    Mean: -14.445767
+    Std: 4.017090
+  Top 10 anomalies:
+    Sample 2774: 9.746299
+    Sample 3164: 7.070487
+    Sample 2209: 6.944445
+    Sample 1524: 6.571793
+    Sample 1882: 6.462607
+    Sample 2702: 6.163460
+    Sample 2628: 5.876877
+    Sample 1212: 5.785189
+    Sample 3550: 5.785189
+    Sample 2931: 5.678258
+
+KNN:
+  Fit time: 0.10 seconds (0.00 minutes)
+  Outliers detected: 378 (10.02%)
+  Score statistics:
+    Min: 0.015093
+    Max: 0.814296
+    Mean: 0.073368
+    Std: 0.059318
+  Top 10 anomalies:
+    Sample 2503: 0.814296
+    Sample 1524: 0.812719
+    Sample 38: 0.758648
+    Sample 2209: 0.736264
+    Sample 1881: 0.713448
+    Sample 1882: 0.712393
+    Sample 2774: 0.688363
+    Sample 742: 0.678331
+    Sample 704: 0.625406
+    Sample 2931: 0.569883
+
+AutoEncoder:
+  Fit time: 22.94 seconds (0.38 minutes)
+  Outliers detected: 378 (10.02%)
+  Score statistics:
+    Min: 0.175539
+    Max: 23.743689
+    Mean: 1.844651
+    Std: 1.671415
+  Top 10 anomalies:
+    Sample 2503: 23.743689
+    Sample 2209: 21.562702
+    Sample 1524: 21.351469
+    Sample 1882: 21.261599
+    Sample 2774: 20.240505
+    Sample 2931: 18.698200
+    Sample 38: 15.966338
+    Sample 742: 14.202065
+    Sample 1881: 13.971302
+    Sample 2136: 12.694610
+
+============================================================
+Completed thyroid in 23.47 seconds (0.39 minutes)
+============================================================
+
+============================================================
+Processing dataset 10/17: wdbc_M_39_variant1
+Started at: 17:11:22
+============================================================
+Loading dataset: wdbc_M_39_variant1
+Data shape: (396, 32)
+
+  Running IForest...
+    Completed in 0.20 seconds
+    Detected 40 outliers (10.10%)
+
+  Running LOF...
+    Completed in 0.01 seconds
+    Detected 40 outliers (10.10%)
+
+  Running COPOD...
+    Completed in 0.01 seconds
+    Detected 40 outliers (10.10%)
+
+  Running HBOS...
+    Completed in 0.01 seconds
+    Detected 40 outliers (10.10%)
+
+  Running KNN...
+    Completed in 0.02 seconds
+    Detected 40 outliers (10.10%)
+
+  Running AutoEncoder...
+    Completed in 2.47 seconds
+    Detected 40 outliers (10.10%)
+
+============================================================
+Results for: wdbc_M_39_variant1
+============================================================
+Data shape: (396, 32)
+
+IForest:
+  Fit time: 0.20 seconds (0.00 minutes)
+  Outliers detected: 40 (10.10%)
+  Score statistics:
+    Min: -0.180029
+    Max: 0.106065
+    Mean: -0.112557
+    Std: 0.062346
+  Top 10 anomalies:
+    Sample 94: 0.106065
+    Sample 144: 0.096113
+    Sample 75: 0.093223
+    Sample 100: 0.090153
+    Sample 0: 0.083238
+    Sample 112: 0.070342
+    Sample 341: 0.063046
+    Sample 231: 0.060981
+    Sample 128: 0.048439
+    Sample 22: 0.048371
+
+LOF:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 40 (10.10%)
+  Score statistics:
+    Min: 0.961204
+    Max: 2.429930
+    Mean: 1.144315
+    Std: 0.232197
+  Top 10 anomalies:
+    Sample 308: 2.429930
+    Sample 309: 2.423352
+    Sample 224: 2.372478
+    Sample 75: 2.353409
+    Sample 223: 2.344058
+    Sample 73: 2.298085
+    Sample 22: 2.168973
+    Sample 74: 2.111662
+    Sample 112: 1.987087
+    Sample 102: 1.883987
+
+COPOD:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 40 (10.10%)
+  Score statistics:
+    Min: 23.836738
+    Max: 90.840661
+    Mean: 41.479400
+    Std: 14.806223
+  Top 10 anomalies:
+    Sample 94: 90.840661
+    Sample 100: 88.712966
+    Sample 217: 86.816889
+    Sample 393: 86.719903
+    Sample 354: 85.138865
+    Sample 75: 84.856490
+    Sample 194: 84.660300
+    Sample 5: 84.077170
+    Sample 128: 83.673121
+    Sample 175: 83.126712
+
+HBOS:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 40 (10.10%)
+  Score statistics:
+    Min: -65.984411
+    Max: 20.627734
+    Mean: -44.144769
+    Std: 20.616099
+  Top 10 anomalies:
+    Sample 217: 20.627734
+    Sample 112: 18.563111
+    Sample 27: 17.997779
+    Sample 5: 16.163000
+    Sample 313: 16.013289
+    Sample 251: 13.658945
+    Sample 31: 12.412230
+    Sample 105: 11.825223
+    Sample 143: 11.642746
+    Sample 393: 11.221198
+
+KNN:
+  Fit time: 0.02 seconds (0.00 minutes)
+  Outliers detected: 40 (10.10%)
+  Score statistics:
+    Min: 0.282063
+    Max: 1.981757
+    Mean: 0.567330
+    Std: 0.296328
+  Top 10 anomalies:
+    Sample 75: 1.981757
+    Sample 112: 1.871285
+    Sample 0: 1.791318
+    Sample 100: 1.715886
+    Sample 239: 1.616855
+    Sample 392: 1.536380
+    Sample 144: 1.524060
+    Sample 22: 1.495647
+    Sample 231: 1.442000
+    Sample 94: 1.383701
+
+AutoEncoder:
+  Fit time: 2.47 seconds (0.04 minutes)
+  Outliers detected: 40 (10.10%)
+  Score statistics:
+    Min: 1.155851
+    Max: 12.936184
+    Mean: 3.381893
+    Std: 1.466198
+  Top 10 anomalies:
+    Sample 112: 12.936184
+    Sample 75: 9.099625
+    Sample 74: 8.666376
+    Sample 73: 7.951463
+    Sample 110: 7.707255
+    Sample 164: 7.649114
+    Sample 224: 7.496142
+    Sample 22: 7.479747
+    Sample 223: 7.463776
+    Sample 309: 7.420576
+
+============================================================
+Completed wdbc_M_39_variant1 in 2.76 seconds (0.05 minutes)
+============================================================
+
+============================================================
+Processing dataset 11/17: cardio
+Started at: 17:11:25
+============================================================
+Loading dataset: cardio
+Data shape: (1831, 22)
+
+  Running IForest...
+    Completed in 0.26 seconds
+    Detected 183 outliers (9.99%)
+
+  Running LOF...
+    Completed in 0.02 seconds
+    Detected 183 outliers (9.99%)
+
+  Running COPOD...
+    Completed in 0.01 seconds
+    Detected 183 outliers (9.99%)
+
+  Running HBOS...
+    Completed in 0.01 seconds
+    Detected 183 outliers (9.99%)
+
+  Running KNN...
+    Completed in 0.03 seconds
+    Detected 183 outliers (9.99%)
+
+  Running AutoEncoder...
+    Completed in 11.84 seconds
+    Detected 183 outliers (9.99%)
+
+============================================================
+Results for: cardio
+============================================================
+Data shape: (1831, 22)
+
+IForest:
+  Fit time: 0.26 seconds (0.00 minutes)
+  Outliers detected: 183 (9.99%)
+  Score statistics:
+    Min: -0.154317
+    Max: 0.126864
+    Mean: -0.084908
+    Std: 0.052756
+  Top 10 anomalies:
+    Sample 1661: 0.126864
+    Sample 1722: 0.117694
+    Sample 1714: 0.112882
+    Sample 1713: 0.111568
+    Sample 1656: 0.109400
+    Sample 1717: 0.103330
+    Sample 1655: 0.103058
+    Sample 1789: 0.098540
+    Sample 1739: 0.094455
+    Sample 1791: 0.093945
+
+LOF:
+  Fit time: 0.02 seconds (0.00 minutes)
+  Outliers detected: 183 (9.99%)
+  Score statistics:
+    Min: 0.958481
+    Max: 2.134357
+    Mean: 1.092609
+    Std: 0.136154
+  Top 10 anomalies:
+    Sample 1123: 2.134357
+    Sample 98: 2.129199
+    Sample 1741: 1.825826
+    Sample 1226: 1.763551
+    Sample 1362: 1.755463
+    Sample 375: 1.749386
+    Sample 1583: 1.746513
+    Sample 373: 1.741577
+    Sample 1722: 1.695814
+    Sample 308: 1.670600
+
+COPOD:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 183 (9.99%)
+  Score statistics:
+    Min: 12.582250
+    Max: 58.763818
+    Mean: 22.306873
+    Std: 6.876939
+  Top 10 anomalies:
+    Sample 1656: 58.763818
+    Sample 1793: 55.205789
+    Sample 1789: 54.781733
+    Sample 1655: 54.779451
+    Sample 1713: 54.524734
+    Sample 1791: 53.754013
+    Sample 1790: 53.389121
+    Sample 1792: 52.866504
+    Sample 1819: 51.790922
+    Sample 1781: 51.439363
+
+HBOS:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 183 (9.99%)
+  Score statistics:
+    Min: -43.275476
+    Max: 5.209272
+    Mean: -30.085913
+    Std: 7.919277
+  Top 10 anomalies:
+    Sample 1656: 5.209272
+    Sample 1655: 4.101338
+    Sample 1713: 2.843433
+    Sample 1661: 2.501298
+    Sample 1789: 0.885658
+    Sample 1714: -1.361848
+    Sample 1717: -2.223925
+    Sample 1739: -2.501729
+    Sample 1670: -2.676187
+    Sample 1749: -2.729543
+
+KNN:
+  Fit time: 0.03 seconds (0.00 minutes)
+  Outliers detected: 183 (9.99%)
+  Score statistics:
+    Min: 0.208671
+    Max: 1.417436
+    Mean: 0.469142
+    Std: 0.166139
+  Top 10 anomalies:
+    Sample 1722: 1.417436
+    Sample 1720: 1.268481
+    Sample 1781: 1.256377
+    Sample 1721: 1.232993
+    Sample 1741: 1.217923
+    Sample 1716: 1.214270
+    Sample 1656: 1.169663
+    Sample 1788: 1.142139
+    Sample 1779: 1.138268
+    Sample 1780: 1.135411
+
+AutoEncoder:
+  Fit time: 11.84 seconds (0.20 minutes)
+  Outliers detected: 183 (9.99%)
+  Score statistics:
+    Min: 0.913570
+    Max: 20.155449
+    Mean: 3.186820
+    Std: 1.526713
+  Top 10 anomalies:
+    Sample 1781: 20.155449
+    Sample 1779: 17.445692
+    Sample 1780: 17.098343
+    Sample 1741: 16.201614
+    Sample 1778: 15.433889
+    Sample 1777: 14.241683
+    Sample 98: 13.902369
+    Sample 1123: 13.444814
+    Sample 1722: 11.204118
+    Sample 1720: 10.032248
+
+============================================================
+Completed cardio in 12.19 seconds (0.20 minutes)
+============================================================
+
+============================================================
+Processing dataset 12/17: ionosphere
+Started at: 17:11:37
+============================================================
+Loading dataset: ionosphere
+Data shape: (351, 34)
+
+  Running IForest...
+    Completed in 0.23 seconds
+    Detected 35 outliers (9.97%)
+
+  Running LOF...
+    Completed in 0.01 seconds
+    Detected 35 outliers (9.97%)
+
+  Running COPOD...
+    Completed in 0.01 seconds
+    Detected 35 outliers (9.97%)
+
+  Running HBOS...
+    Completed in 0.01 seconds
+    Detected 35 outliers (9.97%)
+
+  Running KNN...
+    Completed in 0.02 seconds
+    Detected 35 outliers (9.97%)
+
+  Running AutoEncoder...
+    Completed in 2.03 seconds
+    Detected 35 outliers (9.97%)
+
+============================================================
+Results for: ionosphere
+============================================================
+Data shape: (351, 34)
+
+IForest:
+  Fit time: 0.23 seconds (0.00 minutes)
+  Outliers detected: 35 (9.97%)
+  Score statistics:
+    Min: -0.223103
+    Max: 0.087512
+    Mean: -0.121852
+    Std: 0.079981
+  Top 10 anomalies:
+    Sample 220: 0.087512
+    Sample 206: 0.082081
+    Sample 53: 0.081969
+    Sample 162: 0.074802
+    Sample 194: 0.072068
+    Sample 17: 0.071728
+    Sample 29: 0.062978
+    Sample 188: 0.059301
+    Sample 204: 0.058926
+    Sample 27: 0.055486
+
+LOF:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 35 (9.97%)
+  Score statistics:
+    Min: 0.955730
+    Max: 7.066945
+    Mean: 1.491796
+    Std: 0.791664
+  Top 10 anomalies:
+    Sample 216: 7.066945
+    Sample 81: 6.339914
+    Sample 69: 5.272546
+    Sample 222: 4.934938
+    Sample 214: 4.599487
+    Sample 13: 4.557200
+    Sample 31: 4.314108
+    Sample 75: 4.134436
+    Sample 65: 3.902838
+    Sample 228: 3.766343
+
+COPOD:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 35 (9.97%)
+  Score statistics:
+    Min: 24.701339
+    Max: 67.309013
+    Mean: 39.214435
+    Std: 9.413766
+  Top 10 anomalies:
+    Sample 17: 67.309013
+    Sample 55: 65.214322
+    Sample 21: 64.743619
+    Sample 53: 64.739978
+    Sample 162: 63.932644
+    Sample 220: 63.029980
+    Sample 37: 60.477907
+    Sample 188: 60.437117
+    Sample 194: 60.197031
+    Sample 19: 60.033425
+
+HBOS:
+  Fit time: 0.01 seconds (0.00 minutes)
+  Outliers detected: 35 (9.97%)
+  Score statistics:
+    Min: -63.654617
+    Max: 9.293357
+    Mean: -23.558360
+    Std: 18.469997
+  Top 10 anomalies:
+    Sample 133: 9.293357
+    Sample 55: 6.718231
+    Sample 308: 6.018652
+    Sample 150: 5.256938
+    Sample 225: 5.144871
+    Sample 263: 4.162702
+    Sample 159: 4.133146
+    Sample 118: 3.930737
+    Sample 301: 3.803152
+    Sample 135: 3.610164
+
+KNN:
+  Fit time: 0.02 seconds (0.00 minutes)
+  Outliers detected: 35 (9.97%)
+  Score statistics:
+    Min: 0.201789
+    Max: 3.013011
+    Mean: 1.155365
+    Std: 0.712404
+  Top 10 anomalies:
+    Sample 17: 3.013011
+    Sample 29: 2.899023
+    Sample 220: 2.872281
+    Sample 162: 2.858663
+    Sample 57: 2.824751
+    Sample 77: 2.775707
+    Sample 188: 2.740203
+    Sample 79: 2.708869
+    Sample 53: 2.699504
+    Sample 71: 2.679013
+
+AutoEncoder:
+  Fit time: 2.03 seconds (0.03 minutes)
+  Outliers detected: 35 (9.97%)
+  Score statistics:
+    Min: 0.826121
+    Max: 10.951689
+    Mean: 3.870834
+    Std: 2.437958
+  Top 10 anomalies:
+    Sample 17: 10.951689
+    Sample 29: 10.552525
+    Sample 53: 10.027388
+    Sample 220: 9.882017
+    Sample 162: 9.851417
+    Sample 188: 9.605811
+    Sample 71: 9.460247
+    Sample 57: 9.431262
+    Sample 19: 9.390055
+    Sample 206: 9.381695
+
+============================================================
+Completed ionosphere in 2.32 seconds (0.04 minutes)
+============================================================
+
+============================================================
+Processing dataset 13/17: mushroom
+Started at: 17:11:39
+============================================================
+ERROR: File not found: ./Datasets/mushroom.mat or ./Datasets/mushroom.csv
+
+============================================================
+Processing dataset 14/17: satelite
+Started at: 17:11:39
+============================================================
+ERROR: File not found: ./Datasets/satelite.mat or ./Datasets/satelite.csv
+
+============================================================
+Processing dataset 15/17: shuttle
+Started at: 17:11:39
+============================================================
+Loading dataset: shuttle
+Data shape: (49097, 10)
+
+  Running IForest...
+    Completed in 0.91 seconds
+    Detected 4910 outliers (10.00%)
+
+  Running LOF...
+    Completed in 3.10 seconds
+    Detected 4910 outliers (10.00%)
+
+  Running COPOD...
+    Completed in 0.13 seconds
+    Detected 4910 outliers (10.00%)
+
+  Running HBOS...
+    Completed in 0.03 seconds
+    Detected 4595 outliers (9.36%)
+
+  Running KNN...
+    Completed in 3.10 seconds
+    Detected 4910 outliers (10.00%)
+
+  Running AutoEncoder...
+    Completed in 309.76 seconds
+    Detected 4910 outliers (10.00%)
+
+============================================================
+Results for: shuttle
+============================================================
+Data shape: (49097, 10)
+
+IForest:
+  Fit time: 0.91 seconds (0.02 minutes)
+  Outliers detected: 4910 (10.00%)
+  Score statistics:
+    Min: -0.166925
+    Max: 0.199978
+    Mean: -0.088093
+    Std: 0.070907
+  Top 10 anomalies:
+    Sample 36036: 0.199978
+    Sample 43239: 0.194089
+    Sample 10002: 0.192630
+    Sample 38940: 0.189769
+    Sample 8680: 0.188152
+    Sample 20417: 0.186458
+    Sample 48424: 0.184566
+    Sample 36994: 0.184566
+    Sample 29488: 0.184032
+    Sample 5645: 0.183088
+
+LOF:
+  Fit time: 3.10 seconds (0.05 minutes)
+  Outliers detected: 4910 (10.00%)
+  Score statistics:
+    Min: 0.909242
+    Max: 2705.068420
+    Mean: 1.868445
+    Std: 18.157449
+  Top 10 anomalies:
+    Sample 22406: 2705.068420
+    Sample 2654: 2103.151727
+    Sample 25966: 934.712437
+    Sample 19181: 839.098371
+    Sample 60: 812.782549
+    Sample 27633: 768.402654
+    Sample 9077: 736.992526
+    Sample 1984: 472.389266
+    Sample 19804: 299.693993
+    Sample 12483: 288.278983
+
+COPOD:
+  Fit time: 0.13 seconds (0.00 minutes)
+  Outliers detected: 4910 (10.00%)
+  Score statistics:
+    Min: 4.523410
+    Max: 51.117809
+    Mean: 10.214817
+    Std: 4.471620
+  Top 10 anomalies:
+    Sample 27633: 51.117809
+    Sample 19804: 49.093407
+    Sample 12483: 48.083745
+    Sample 43239: 45.819413
+    Sample 36209: 44.205786
+    Sample 46742: 43.181924
+    Sample 9077: 43.077281
+    Sample 19181: 42.780322
+    Sample 41201: 41.274341
+    Sample 8064: 40.793567
+
+HBOS:
+  Fit time: 0.03 seconds (0.00 minutes)
+  Outliers detected: 4595 (9.36%)
+  Score statistics:
+    Min: -30.766268
+    Max: 10.406133
+    Mean: -27.206788
+    Std: 5.460137
+  Top 10 anomalies:
+    Sample 46742: 10.406133
+    Sample 27633: 5.558510
+    Sample 19804: 5.546845
+    Sample 2654: 5.529485
+    Sample 20999: -0.925803
+    Sample 22345: -0.925803
+    Sample 12483: -1.093028
+    Sample 22406: -1.095946
+    Sample 8064: -2.378056
+    Sample 38516: -2.380956
+
+KNN:
+  Fit time: 3.10 seconds (0.05 minutes)
+  Outliers detected: 4910 (10.00%)
+  Score statistics:
+    Min: 0.000119
+    Max: 1.091793
+    Mean: 0.003145
+    Std: 0.017450
+  Top 10 anomalies:
+    Sample 2654: 1.091793
+    Sample 22406: 1.082159
+    Sample 46742: 0.842717
+    Sample 60: 0.826492
+    Sample 25966: 0.820030
+    Sample 1984: 0.726786
+    Sample 36209: 0.672467
+    Sample 45505: 0.637760
+    Sample 15797: 0.626095
+    Sample 27843: 0.589124
+
+AutoEncoder:
+  Fit time: 309.76 seconds (5.16 minutes)
+  Outliers detected: 4910 (10.00%)
+  Score statistics:
+    Min: 0.293286
+    Max: 122.773125
+    Mean: 1.583982
+    Std: 2.141737
+  Top 10 anomalies:
+    Sample 45505: 122.773125
+    Sample 1984: 105.209351
+    Sample 15797: 102.283684
+    Sample 30196: 99.623543
+    Sample 46742: 86.255821
+    Sample 11368: 68.265991
+    Sample 9077: 61.295193
+    Sample 36209: 60.680973
+    Sample 27403: 60.257298
+    Sample 8064: 58.460781
+
+============================================================
+Completed shuttle in 317.07 seconds (5.28 minutes)
+============================================================
+
+============================================================
+Processing dataset 16/17: test_mixed
+Started at: 17:16:57
+============================================================
+Loading dataset: test_mixed
+Data shape: (49, 4)
+
+  Running IForest...
+    Completed in 0.18 seconds
+    Detected 5 outliers (10.20%)
+
+  Running LOF...
+    Completed in 0.00 seconds
+    Detected 5 outliers (10.20%)
+
+  Running COPOD...
+    Completed in 0.00 seconds
+    Detected 5 outliers (10.20%)
+
+  Running HBOS...
+    Completed in 0.00 seconds
+    Detected 5 outliers (10.20%)
+
+  Running KNN...
+    Completed in 0.00 seconds
+    Detected 5 outliers (10.20%)
+
+  Running AutoEncoder...
+    Completed in 0.21 seconds
+    Detected 5 outliers (10.20%)
+
+============================================================
+Results for: test_mixed
+============================================================
+Data shape: (49, 4)
+
+IForest:
+  Fit time: 0.18 seconds (0.00 minutes)
+  Outliers detected: 5 (10.20%)
+  Score statistics:
+    Min: -0.147066
+    Max: 0.037014
+    Mean: -0.064260
+    Std: 0.051596
+  Top 10 anomalies:
+    Sample 5: 0.037014
+    Sample 23: 0.024895
+    Sample 14: 0.018510
+    Sample 29: 0.002889
+    Sample 12: 0.000848
+    Sample 3: -0.000212
+    Sample 22: -0.001652
+    Sample 28: -0.003225
+    Sample 20: -0.003359
+    Sample 36: -0.004896
+
+LOF:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 5 (10.20%)
+  Score statistics:
+    Min: 0.940411
+    Max: 2.026175
+    Mean: 1.190549
+    Std: 0.269680
+  Top 10 anomalies:
+    Sample 5: 2.026175
+    Sample 14: 1.945164
+    Sample 37: 1.792821
+    Sample 30: 1.731994
+    Sample 3: 1.687073
+    Sample 23: 1.517655
+    Sample 12: 1.493007
+    Sample 36: 1.451787
+    Sample 31: 1.406072
+    Sample 48: 1.386401
+
+COPOD:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 5 (10.20%)
+  Score statistics:
+    Min: 2.454776
+    Max: 7.520769
+    Mean: 4.487602
+    Std: 1.184780
+  Top 10 anomalies:
+    Sample 5: 7.520769
+    Sample 30: 7.055313
+    Sample 40: 6.493308
+    Sample 8: 5.980324
+    Sample 11: 5.789357
+    Sample 37: 5.761021
+    Sample 23: 5.757226
+    Sample 14: 5.700608
+    Sample 12: 5.694255
+    Sample 33: 5.588851
+
+HBOS:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 5 (10.20%)
+  Score statistics:
+    Min: -4.958384
+    Max: 4.019194
+    Mean: -1.138436
+    Std: 2.568779
+  Top 10 anomalies:
+    Sample 12: 4.019194
+    Sample 44: 3.292788
+    Sample 15: 3.144566
+    Sample 35: 2.712598
+    Sample 23: 2.624734
+    Sample 4: 2.406316
+    Sample 31: 2.249575
+    Sample 45: 2.064874
+    Sample 25: 1.862029
+    Sample 10: 1.628331
+
+KNN:
+  Fit time: 0.00 seconds (0.00 minutes)
+  Outliers detected: 5 (10.20%)
+  Score statistics:
+    Min: 0.188236
+    Max: 0.594161
+    Mean: 0.409590
+    Std: 0.122827
+  Top 10 anomalies:
+    Sample 23: 0.594161
+    Sample 2: 0.574503
+    Sample 36: 0.573349
+    Sample 40: 0.565175
+    Sample 3: 0.560556
+    Sample 20: 0.560209
+    Sample 19: 0.559652
+    Sample 22: 0.558578
+    Sample 8: 0.545822
+    Sample 5: 0.540170
+
+AutoEncoder:
+  Fit time: 0.21 seconds (0.00 minutes)
+  Outliers detected: 5 (10.20%)
+  Score statistics:
+    Min: 0.985534
+    Max: 3.388302
+    Mean: 2.068810
+    Std: 0.592974
+  Top 10 anomalies:
+    Sample 12: 3.388302
+    Sample 36: 3.198247
+    Sample 3: 3.126418
+    Sample 5: 3.056039
+    Sample 28: 2.970413
+    Sample 30: 2.862722
+    Sample 22: 2.714997
+    Sample 43: 2.649291
+    Sample 23: 2.628261
+    Sample 14: 2.605816
+
+============================================================
+Completed test_mixed in 0.41 seconds (0.01 minutes)
+============================================================
+
+============================================================
+Processing dataset 17/17: text_sample
+Started at: 17:16:57
+============================================================
+ERROR: File not found: ./Datasets/text_sample.mat or ./Datasets/text_sample.csv
+
+
+============================================================
+FINAL SUMMARY
+============================================================
+Total runtime: 543.81 seconds (9.06 minutes, 0.15 hours)
+
+Per-dataset timing:
+Dataset                        Status          Time (min)      Shape               
+--------------------------------------------------------------------------------
+annthyroid                     success         0.90            (7200, 7)           
+creditA_plus_42_variant1       success         0.05            (425, 16)           
+german_1_14_variant1           success         0.08            (714, 21)           
+heart270_2_16_variant1         success         0.02            (166, 14)           
+lymphography                   success         0.02            (148, 19)           
+mammography                    success         1.17            (11183, 7)          
+mushroom_p_221_variant1        success         0.47            (4429, 23)          
+musk                           success         0.38            (3062, 167)         
+thyroid                        success         0.39            (3772, 7)           
+wdbc_M_39_variant1             success         0.05            (396, 32)           
+cardio                         success         0.20            (1831, 22)          
+ionosphere                     success         0.04            (351, 34)           
+mushroom                       file_not_found  N/A             N/A                 
+satelite                       file_not_found  N/A             N/A                 
+shuttle                        success         5.28            (49097, 10)         
+test_mixed                     success         0.01            (49, 4)             
+text_sample                    file_not_found  N/A             N/A                 
+
+============================================================
+Algorithm Performance Summary
+============================================================
+Algorithm            Avg Time (s)    Total Time (s)  Runs      
+------------------------------------------------------------
+IForest              0.29            4.11            14        
+LOF                  0.34            4.74            14        
+COPOD                0.07            0.99            14        
+HBOS                 0.34            4.70            14        
+KNN                  0.32            4.48            14        
+AutoEncoder          37.43           523.97          14        
+
+============================================================
+Completed at: 2026-04-25 17:16:57
+============================================================
+
+All output saved to: output_logs\pyod_output_20260425_170753.txt
+============================================================
