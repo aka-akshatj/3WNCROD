@@ -12,6 +12,7 @@ from sklearn.metrics import roc_auc_score, confusion_matrix
 import time
 import warnings
 warnings.filterwarnings('ignore')
+from tensorflow.keras import regularizers
 
 
 class DirectAutoencoder:
@@ -62,6 +63,9 @@ class DirectAutoencoder:
     def _build_model(self):
         """Build the autoencoder architecture"""
         
+        # Set the L2 penalty value (1e-4 is a standard starting point)
+        l2_penalty = regularizers.l2(1e-4)
+        
         # ===== ENCODER =====
         input_layer = layers.Input(shape=(self.input_dim,))
         
@@ -70,13 +74,18 @@ class DirectAutoencoder:
         encoder_layers = []
         
         for dim in self.hidden_dims:
-            x = layers.Dense(dim, activation=self.activation)(x)
+            # Added L2 regularization to the Dense layer
+            x = layers.Dense(dim, activation=self.activation, 
+                             kernel_regularizer=l2_penalty)(x)
             x = layers.BatchNormalization()(x)
             x = layers.Dropout(0.2)(x)
             encoder_layers.append(dim)
         
         # Bottleneck (latent representation)
-        bottleneck = layers.Dense(self.bottleneck_dim, activation=self.activation, name='bottleneck')(x)
+        # Added L2 regularization to the bottleneck
+        bottleneck = layers.Dense(self.bottleneck_dim, activation=self.activation, 
+                                  name='bottleneck',
+                                  kernel_regularizer=l2_penalty)(x)
         
         # ===== DECODER =====
         # Mirror the encoder structure
@@ -84,11 +93,14 @@ class DirectAutoencoder:
         decoder_dims = self.hidden_dims[::-1]  # Reverse order
         
         for dim in decoder_dims:
-            x = layers.Dense(dim, activation=self.activation)(x)
+            # Added L2 regularization to the Dense layer
+            x = layers.Dense(dim, activation=self.activation,
+                             kernel_regularizer=l2_penalty)(x)
             x = layers.BatchNormalization()(x)
             x = layers.Dropout(0.2)(x)
         
         # Output layer (reconstruct original input)
+        # Note: We typically do not regularize the final output layer
         output_layer = layers.Dense(self.input_dim, activation='sigmoid')(x)
         
         # ===== FULL AUTOENCODER =====
@@ -101,7 +113,9 @@ class DirectAutoencoder:
         latent_input = layers.Input(shape=(self.bottleneck_dim,))
         x = latent_input
         for dim in decoder_dims:
-            x = layers.Dense(dim, activation=self.activation)(x)
+            # Ensuring the standalone decoder matches the regularized structure
+            x = layers.Dense(dim, activation=self.activation,
+                             kernel_regularizer=l2_penalty)(x)
             x = layers.BatchNormalization()(x)
             x = layers.Dropout(0.2)(x)
         decoded = layers.Dense(self.input_dim, activation='sigmoid')(x)
