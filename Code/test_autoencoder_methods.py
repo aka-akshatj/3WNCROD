@@ -9,6 +9,7 @@ import numpy as np
 from scipy.io import loadmat
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
+from sklearn.metrics import roc_auc_score
 
 # Add current directory to path
 sys.path.insert(0, os.path.dirname(__file__))
@@ -22,13 +23,37 @@ def load_dataset(dataset_path):
     
     if file_ext == '.mat':
         load_data = loadmat(dataset_path)
-        data_key = [k for k in load_data.keys() if not k.startswith('__')][0]
-        X = load_data[data_key]
+        
+        # Find the feature matrix (ignore dunder methods and common label names)
+        ignore_keys = ['y', 'label', 'labels', 'outlier', 'outliers', 'ground_truth']
+        data_keys = [k for k in load_data.keys() if not k.startswith('__') and k.lower() not in ignore_keys]
+        X = load_data[data_keys[0]]
+        
+        # Smart search for the ground truth labels
+        y = None
+        for key in load_data.keys():
+            if key.lower() in ignore_keys:
+                y = load_data[key].flatten()
+                break
+                
+        # If we STILL can't find labels, check if the last column of X is binary
+        if y is None:
+            unique_last_col = np.unique(X[:, -1])
+            if len(unique_last_col) <= 2 and np.all(np.isin(unique_last_col, [0, 1])):
+                print("  [Note] Extracting labels from the last column of the matrix.")
+                y = X[:, -1]
+                X = X[:, :-1]
+            else:
+                print(f"  [Warning] No labels found in {os.path.basename(dataset_path)}. AUC will be NaN.")
+                y = np.zeros(X.shape[0])
+                
     elif file_ext == '.csv':
         df = pd.read_csv(dataset_path)
         for col in df.select_dtypes(include=['object']).columns:
             df[col] = df[col].astype('category').cat.codes
         X = df.values
+        y = X[:, -1] 
+        X = X[:, :-1]
     else:
         raise ValueError(f"Unsupported format: {file_ext}")
     
@@ -37,7 +62,7 @@ def load_dataset(dataset_path):
     scaler = MinMaxScaler()
     X = scaler.fit_transform(X)
     
-    return X
+    return X, y
 
 
 def test_direct_autoencoder():
@@ -74,7 +99,7 @@ def test_direct_autoencoder():
         
         try:
             # Load
-            X = load_dataset(dataset_path)
+            X,y = load_dataset(dataset_path)
             print(f"Shape: {X.shape}")
             
             # Create autoencoder with adaptive parameters
@@ -91,7 +116,7 @@ def test_direct_autoencoder():
                 input_dim=n_features,
                 bottleneck_dim=bottleneck_dim,
                 hidden_dims=hidden_dims,
-                epochs=30,  # Fewer epochs for testing
+                epochs=50,  # Fewer epochs for testing
                 batch_size=min(32, X.shape[0] // 5),
                 learning_rate=0.001
             )
@@ -132,34 +157,30 @@ def test_direct_autoencoder():
             traceback.print_exc()
 
 
-def compare_pyod_vs_direct():
-    """Compare PyOD vs Direct AutoEncoder on a dataset"""
+def compare_pyod_vs_direct(target_filename):
+    """Compare PyOD vs Direct AutoEncoder on a specific dataset"""
     
     print("\n" + "=" * 80)
-    print("COMPARISON: PyOD vs Direct AutoEncoder")
+    print(f"COMPARISON: PyOD vs Direct AutoEncoder")
     print("=" * 80)
     
-    # Load first available dataset
+    # Search for the specific file
     dataset_dirs = ['Datasets', 'Code/Datasets']
     dataset_path = None
     
     for dataset_dir in dataset_dirs:
-        if os.path.exists(dataset_dir):
-            for file in os.listdir(dataset_dir):
-                if file.endswith(('.mat', '.csv')):
-                    dataset_path = os.path.join(dataset_dir, file)
-                    break
-        if dataset_path:
+        potential_path = os.path.join(dataset_dir, target_filename)
+        if os.path.exists(potential_path):
+            dataset_path = potential_path
             break
-    
+            
     if not dataset_path:
-        print("No dataset found for comparison")
+        print(f"✗ Could not find {target_filename} in the Datasets folders.")
         return
     
-    X = load_dataset(dataset_path)
-    dataset_name = os.path.basename(dataset_path)
+    X, y = load_dataset(dataset_path)
     
-    print(f"\nDataset: {dataset_name}")
+    print(f"\nDataset: {target_filename}")
     print(f"Shape: {X.shape}\n")
     
     # ===== PyOD AutoEncoder =====
@@ -184,6 +205,9 @@ def compare_pyod_vs_direct():
         
         pyod_scores = model_pyod.decision_scores_
         pyod_labels = model_pyod.labels_
+
+        pyod_auc = roc_auc_score(y, pyod_scores)
+        print(f"   PyOD ROC-AUC: {pyod_auc:.4f}")
         
         print(f"   Training time: {pyod_time:.3f}s")
         print(f"   Anomalies: {int(np.sum(pyod_labels))} ({np.mean(pyod_labels)*100:.2f}%)")
@@ -204,7 +228,7 @@ def compare_pyod_vs_direct():
             input_dim=X.shape[1],
             bottleneck_dim=max(2, X.shape[1]//4),
             hidden_dims=[max(4, X.shape[1]//2)],
-            epochs=30,
+            epochs=30,  # Note: You can increase this to 50 for better results on big data
             batch_size=32,
             learning_rate=0.001
         )
@@ -214,6 +238,9 @@ def compare_pyod_vs_direct():
         direct_time = time.time() - start
         
         direct_scores, direct_labels = ae.predict(X)
+
+        direct_auc = roc_auc_score(y, direct_scores)
+        print(f"   Direct AE ROC-AUC: {direct_auc:.4f}")
         
         print(f"   Training time: {direct_time:.3f}s")
         print(f"   Anomalies: {int(np.sum(direct_labels))} ({np.mean(direct_labels)*100:.2f}%)")
@@ -243,20 +270,24 @@ def compare_pyod_vs_direct():
         if correlation > 0.7:
             print("\n   ✓ Both methods agree closely on anomaly detection")
         else:
-            print("\n   ⚠ Methods show different anomaly patterns (may detect different types)")
+            print("\n   ⚠ Methods show different anomaly patterns")
     else:
         print("   Could not complete comparison")
 
 
 if __name__ == "__main__":
-    print("\nAutoencoder Testing Suite")
+    print("\nAutoencoder Testing Suite - Large Datasets")
     print("=" * 80)
     
-    # Test direct autoencoder
-    test_direct_autoencoder()
+    # Add or remove datasets from this list to test them sequentially
+    target_datasets = [
+        'mammography.mat',    # The ultimate class imbalance test (11k rows)
+        'annthyroid.mat',     # Solid medium-large dataset (7k rows)
+        'musk.mat'            # High dimensionality test (166 features)
+    ]
     
-    # Compare methods
-    compare_pyod_vs_direct()
+    for ds in target_datasets:
+        compare_pyod_vs_direct(ds)
     
     print("\n" + "=" * 80)
     print("Testing complete!")
