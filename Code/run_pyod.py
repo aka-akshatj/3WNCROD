@@ -77,6 +77,7 @@ def print_results_summary(results, dataset_name):
     print(f"Results for: {dataset_name}")
     print(f"{'='*60}")
     print(f"Data shape: {results['data_shape']}")
+    print(f"Ground truth labels available: {'Yes' if results.get('has_labels') else 'No'}")
     
     for algo_name, algo_results in results['algorithms'].items():
         if 'error' in algo_results:
@@ -91,6 +92,15 @@ def print_results_summary(results, dataset_name):
         print(f"    Max: {algo_results['max_score']:.6f}")
         print(f"    Mean: {algo_results['mean_score']:.6f}")
         print(f"    Std: {algo_results['std_score']:.6f}")
+        
+        # Print ROC-AUC and other metrics if available
+        if 'roc_auc' in algo_results and algo_results['roc_auc'] is not None:
+            print(f"  Performance Metrics:")
+            print(f"    ROC-AUC: {algo_results['roc_auc']:.4f}")
+            print(f"    Precision: {algo_results.get('precision', 0):.4f}")
+            print(f"    Recall: {algo_results.get('recall', 0):.4f}")
+            print(f"    F1-Score: {algo_results.get('f1_score', 0):.4f}")
+            print(f"    Accuracy: {algo_results.get('accuracy', 0):.4f}")
         
         # Top anomalies
         top_k = min(10, len(algo_results['outlier_scores']))

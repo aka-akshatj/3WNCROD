@@ -6,6 +6,7 @@ This module provides functions to detect outliers using various PyOD algorithms
 import numpy as np
 from scipy.io import loadmat
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import roc_auc_score, confusion_matrix, precision_recall_fscore_support
 import pandas as pd
 import os
 import time
@@ -50,15 +51,35 @@ def load_and_preprocess_dataset(dataset_path, dataset_name):
     --------
     data : numpy array
         Preprocessed data (normalized to [0,1])
+    labels : numpy array or None
+        Ground truth labels (if available), None otherwise
     """
     # Detect file type
     file_ext = os.path.splitext(dataset_path)[1].lower()
     
+    labels = None
+    
     if file_ext == '.mat':
         # Load .mat file
         load_data = loadmat(dataset_path)
-        data_key = [k for k in load_data.keys() if not k.startswith('__')][0]
-        trandata = load_data[data_key]
+        
+        # Find the feature matrix (ignore dunder methods and common label names)
+        ignore_keys = ['y', 'label', 'labels', 'outlier', 'outliers', 'ground_truth', 'gt']
+        data_keys = [k for k in load_data.keys() if not k.startswith('__') and k.lower() not in ignore_keys]
+        trandata = load_data[data_keys[0]]
+        
+        # Smart search for the ground truth labels
+        for key in load_data.keys():
+            if key.lower() in ignore_keys:
+                labels = load_data[key].flatten()
+                break
+        
+        # If we STILL can't find labels, check if the last column of X is binary
+        if labels is None:
+            unique_last_col = np.unique(trandata[:, -1])
+            if len(unique_last_col) <= 2 and np.all(np.isin(unique_last_col, [0, 1])):
+                labels = trandata[:, -1]
+                trandata = trandata[:, :-1]
         
     elif file_ext == '.csv':
         # Load .csv file
@@ -71,6 +92,11 @@ def load_and_preprocess_dataset(dataset_path, dataset_name):
         # Convert to numpy array
         trandata = df.values
         
+        # Check if last column is binary labels
+        if len(np.unique(trandata[:, -1])) <= 2 and np.all(np.isin(np.unique(trandata[:, -1]), [0, 1])):
+            labels = trandata[:, -1]
+            trandata = trandata[:, :-1]
+        
     else:
         raise ValueError(f"Unsupported file format: {file_ext}. Use .mat or .csv")
     
@@ -81,7 +107,7 @@ def load_and_preprocess_dataset(dataset_path, dataset_name):
     scaler = MinMaxScaler()
     trandata_normalized = scaler.fit_transform(trandata)
     
-    return trandata_normalized
+    return trandata_normalized, labels
 
 
 def detect_outliers_pyod(data, algorithm='IForest', **kwargs):
@@ -187,12 +213,15 @@ def process_dataset_with_multiple_algorithms(dataset_path, dataset_name, algorit
     
     # Load and preprocess
     print(f"Loading dataset: {dataset_name}")
-    data = load_and_preprocess_dataset(dataset_path, dataset_name)
+    data, labels = load_and_preprocess_dataset(dataset_path, dataset_name)
     print(f"Data shape: {data.shape}")
+    if labels is not None:
+        print(f"Labels shape: {labels.shape}, Unique values: {np.unique(labels)}")
     
     results = {
         'dataset_name': dataset_name,
         'data_shape': data.shape,
+        'has_labels': labels is not None,
         'algorithms': {}
     }
     
@@ -211,24 +240,48 @@ def process_dataset_with_multiple_algorithms(dataset_path, dataset_name, algorit
                 algo_kwargs['n_estimators'] = 100
                 algo_kwargs['max_samples'] = min(256, data.shape[0])
             
-            outlier_scores, labels, model, fit_time = detect_outliers_pyod(
+            outlier_scores, labels_pred, model, fit_time = detect_outliers_pyod(
                 data, algorithm=algo, **algo_kwargs
             )
             
-            results['algorithms'][algo] = {
+            algo_result = {
                 'outlier_scores': outlier_scores,
-                'labels': labels,
+                'labels': labels_pred,
                 'fit_time': fit_time,
-                'n_outliers': int(np.sum(labels)),
-                'outlier_rate': float(np.mean(labels)),
+                'n_outliers': int(np.sum(labels_pred)),
+                'outlier_rate': float(np.mean(labels_pred)),
                 'min_score': float(np.min(outlier_scores)),
                 'max_score': float(np.max(outlier_scores)),
                 'mean_score': float(np.mean(outlier_scores)),
                 'std_score': float(np.std(outlier_scores))
             }
             
+            # Calculate ROC-AUC if labels are available
+            if labels is not None:
+                try:
+                    roc_auc = roc_auc_score(labels, outlier_scores)
+                    algo_result['roc_auc'] = float(roc_auc)
+                    
+                    # Calculate additional metrics
+                    tn, fp, fn, tp = confusion_matrix(labels, labels_pred).ravel()
+                    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+                    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+                    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+                    
+                    algo_result['precision'] = float(precision)
+                    algo_result['recall'] = float(recall)
+                    algo_result['f1_score'] = float(f1)
+                    algo_result['accuracy'] = float((tp + tn) / (tp + tn + fp + fn))
+                    
+                    print(f"    ROC-AUC: {roc_auc:.4f}")
+                except Exception as e:
+                    print(f"    Warning: Could not calculate ROC-AUC: {str(e)}")
+                    algo_result['roc_auc'] = None
+            
+            results['algorithms'][algo] = algo_result
+            
             print(f"    Completed in {fit_time:.2f} seconds")
-            print(f"    Detected {int(np.sum(labels))} outliers ({np.mean(labels)*100:.2f}%)")
+            print(f"    Detected {int(np.sum(labels_pred))} outliers ({np.mean(labels_pred)*100:.2f}%)")
             
         except Exception as e:
             print(f"    ERROR with {algo}: {str(e)}")
